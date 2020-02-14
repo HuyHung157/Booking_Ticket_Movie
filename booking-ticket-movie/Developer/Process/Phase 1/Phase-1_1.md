@@ -4,5 +4,8 @@
 + Bắt đầu lên lại ý tượng và lên workflow
 + Setup lại môi trường, dùng Github
 + Khởi tạo thành công
-
+### 02/02/2020
++ Bắt đầu chia các Component
++ Cố gắng áp dụng Material UI
++ Làm Header, Carousel
 

@@ -1,0 +1,90 @@
+.commingSoon {
+	margin: 0 auto;
+	height: 500px;
+	width: 80%;
+	display: block;
+    position: relative;
+    margin-bottom: 150px;
+	
+	.slider_commingSoon_control {
+		.arrow_btn {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			height: 100%;
+			border: none;
+			outline: none;
+			background-color: transparent;
+		}
+		.btn_pre_slide {
+			left: 2px;
+			width: 7%;
+			transition: all .5s;
+			&:hover {
+				background-color: $color-black-3;
+				i {
+					color: $color-white-1;
+				}
+			}
+			i {
+				color: $color-white-2;
+				font-size: 50px;
+				transition: all .5s;
+			}
+		}
+		.btn_next_slide {
+			right: 0px;
+			width: 7%;
+			transition: all .5s;
+			&:hover {
+				background-color: $color-black-3;
+				i {
+					color: $color-white-1;
+				}
+			}
+			i {
+				color: $color-white-2;
+				font-size: 50px;
+				transition: all .5s;
+			}
+		}
+    }
+}
+
+body{
+	position: relative;
+	background-color: $color-black-1 !important;
+	.ReactModal__Body--open{
+		display: block !important;
+		position: absolute;
+		z-index: 9999 !important;
+		background-color: $color-black-1 !important;
+	}
+	.ReactModalPortal{
+		
+		height: 80%;
+		width: 80%;
+		z-index: 10 !important;
+		padding: 0 !important;
+		background-color: $color-black-1 !important;
+		.ReactModal__Overlay{
+			position: fixed !important;
+			background-color: $color-black-1 !important;
+			.ReactModal__Content--after-open{
+				background-color: $color-black-1 !important;
+				z-index: 9 !important;
+				padding: 0 !important;
+				border: none;
+			}
+			.ReactModal__Content{
+				background-color: $color-black-1 !important;
+				z-index: 9 !important;
+				height: 80%;
+			width: 80%;
+				margin: 0 auto;
+				padding: 0 !important;
+				border: none !important;
+			}
+		}
+	}
+}

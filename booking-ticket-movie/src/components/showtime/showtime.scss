@@ -1,0 +1,40 @@
+@import "../movie/movie.scss";
+@import "../nowShowing/nowShowing.scss";
+@import "../commingSoon/commingSoon.scss";
+
+.showtime {
+	.showtime__padding {
+		padding-top: 100px;
+		.showtime__content {
+			.MuiPaper-root {
+				background-color: transparent;
+				height: 60px;
+				.MuiTabs-root {
+					height: 100%;
+					margin: auto 10px !important;
+					outline: none;
+					.MuiTab-wrapper {
+						font-size: 25px;
+					}
+					.PrivateTabIndicator-colorPrimary-55 {
+						background-color: $color-red-0;
+					}
+				}
+				.MuiTab-textColorPrimary {
+					outline: none;
+					transition: all .5s;
+					color: $color-white-2;
+					&:hover {
+						color: $color-red-1;
+					}
+				}
+				.MuiTab-textColorPrimary.Mui-selected {
+					color: $color-red-0;
+				}
+			}
+			.MuiPaper-elevation1 {
+				box-shadow: none;
+			}
+		}
+	}
+}

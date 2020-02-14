@@ -1,0 +1,14 @@
+.theatres {
+	height: 500px;
+	width: 100%;
+	display: block;
+	background-color: $color-black-3;
+	border: 1px solid black;
+	.theatres__padding {
+		padding: 100px;
+		.theatres__content {
+			width: 50%;
+			height: 500px;
+		}
+	}
+}

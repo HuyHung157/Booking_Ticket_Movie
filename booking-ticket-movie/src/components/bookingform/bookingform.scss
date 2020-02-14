@@ -1,0 +1,141 @@
+.slider_bookingform{
+    position: relative;
+    .bookingform{
+        display: block !important;
+        max-width: 80%;
+        margin: auto;
+        height: auto;
+        position: absolute;
+        width: 100%;
+        bottom: 1%;
+        left: 50%;
+        transform: translate(-50%,50%);
+        background-color: $color-white-0;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        z-index: 6;
+        .selection_group{
+            width: 100%;
+            text-align: center;
+            margin: 0 auto !important;
+            padding: 5px !important;
+            .sel {
+                text-align: center;
+                font-size: 1.2rem;
+                display: inline-block;
+                margin: 15px 5px !important;
+                background-color: transparent;
+                position: relative;
+                cursor: pointer;
+                // border-left: 1px solid rgb(0, 0, 0);
+                border-right:  0.5px solid rgba(0, 0, 0, 0.5);
+                &::before {
+                    position: absolute;
+                    content: '\f063';
+                    font-family: 'FontAwesome';
+                    color: $color-red-0;
+                    right: 20px;
+                    font-size: 15px;
+                    top: calc(50% - 0.5em);
+                }
+                &.active::before {
+                    transform: rotateX(-180deg);
+                }
+                &.active .sel__placeholder {
+                    visibility: hidden;
+                    &::before {
+                        visibility: visible;
+                    }
+                }
+                &.active .sel__box {
+                    display: block;
+                    animation: fadeInUp 500ms;
+                }
+                
+                  .sel__box {
+                    position: absolute;
+                    top: calc(100% + 4px);
+                    left: -4px;
+                    display: none;
+                    list-style-type: none;
+                    text-align: left;
+                    background-color: #FFF;
+                    width: calc(100% + 8px);
+                    box-sizing: border-box;
+                    .form_group_date{
+                        text-align: center;
+                    }
+                    .form_group_session{
+                        text-align: center;
+                    }
+                    .sel__box__options {
+                        display: list-item;
+                        font-family: 'Quicksand';
+                        color: #000000;
+                        padding: 0.5em 1em !important;
+                        user-select: none;
+                        &::after {
+                            content: '\f00c';
+                            font-family: 'FontAwesome';
+                            margin-left: 15px !important;
+                            display: none;
+                            }
+                        &:hover {
+                        background-color: #ebedef;
+                        }
+                        &.selected::after {
+                            display: inline;
+                        }
+                    }
+                  }
+            }
+            .sel__placeholder {
+                display: block;
+                font-family: 'Quicksand';
+        
+                color: #000000;
+                padding: 0.2em 0.5em !important;
+                text-align: left;
+                pointer-events: none;
+                user-select: none;
+                visibility: visible;
+                &::before {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    padding: 0.2em 0.5em;
+                    content: attr(data-placeholder);
+                    visibility: hidden;
+                  }
+              }
+            .form_group_film {
+                z-index: 5;
+                width: 250px;
+                
+            }
+            .form_group_theatres {
+                /*   display: none; */
+                z-index: 4;
+                width: 240px;
+            }
+            .form_group_date{
+                z-index: 3;
+                width: 220px;
+            }
+            .form_group_session{
+                z-index: 2;
+                width: 200px;
+            }
+        
+            .btn_bookfilm{
+                margin-left: 10px !important;
+                padding: 10px 25px !important;
+                background-color: $color-red-0;
+                border: none;
+            }
+        }
+          
+    }
+}

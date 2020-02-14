@@ -1,0 +1,39 @@
+DanhSachPhimDangChieu =[
+    {TenPhim:"The Walking Dead",HinhAnh:'../../../assets/img/sinh-nhat-chet-choc-happy-death-day-c16-15089876590397.jpg'},
+    {TenPhim:"Ferdinand",HinhAnh:'../../../assets/img/ferdinand.jpg'},
+    {TenPhim:"Ngắm Pháo Hoa",HinhAnh:'../../../assets/img/phao-hoa-nen-ngam-tu-duoi-hay-ben-canh-15088436147700.jpg'},
+    {TenPhim:"Nhóc Ma Siêu Quậy",HinhAnh:'../../../assets/img/nhoc-ma-sieu-quay-the-little-vampire-3d-15090331183157.jpg'},
+    {TenPhim:"Trải nghiệm điểm chết",HinhAnh:'../../../assets/img/trai-nghiem-diem-chet-flatliners-15093522963475.jpg'},
+  ]
+
+
+
+  DanhSachPhimSapChieu = [
+    {TenPhim:"Thor: Ragnarok",HinhAnh:'../../../assets/img/thor-ragnarok-15088151416399.jpg'},
+    {TenPhim:"Ferdinand",HinhAnh:'../../../assets/img/pokemon-to-chon-cau-pokemon-i-choose-you-15095249219579.jpg'},
+    {TenPhim:"Trùm Hương Cảng",HinhAnh:'../../../assets/img/trum-huong-cang-chasing-the-dragon-15088270130890.jpg'},
+    {TenPhim:"Ferdinand",HinhAnh:'../../../assets/img/ferdinand.jpg'},
+    {TenPhim:"Trải nghiệm điểm chết",HinhAnh:'../../../assets/img/trai-nghiem-diem-chet-flatliners-15093522963475.jpg'},
+  ];
+
+
+DanhSachDienAnh = [
+    {TieuDeTinTuc:"Marvel mua lại DC",HinhAnh:'../../../assets/img/diem-mat-dan-sao-dinh-dam-trong-bom-tan-lien-minh-cong-ly-15106519084263.jpg'},
+    {TieuDeTinTuc:"Ferdinand",HinhAnh:'../../../assets/img/fast-and-furious-9-co-bien-kich-moi-ngay-phat-hanh-cua-phim-doi-tu-2019-sang-2020-15263575332878.jpg'},
+    {TieuDeTinTuc:"Trùm Hương Cảng",HinhAnh:'../../../assets/img/nhom-losers-club-lon-dang-dan-dan-lo-dien-trong-sieu-pham-it-chapter-two-15265444875493.jpg'}, 
+  ]
+
+
+  DanhSachReview = [
+    {TieuDeSuKien:"Sự Kiện KFC",HinhAnh:'http://billnguyen.com/wp-content/uploads/2014/04/Event-Showcase1-2.jpg'},
+    {TieuDeSuKien:"Sự Kiện Lotte",HinhAnh:'https://static.ybox.vn/2018/3/7/6196b406-2228-11e8-b466-56c566ee3692.png'},
+    {TieuDeSuKien:"Sự Kiện Texas",HinhAnh:'http://cafefcdn.com/thumb_w/650/2017/2061185419-kien-nhan-1501344528133.jpg'}, 
+  ]
+
+
+
+  DanhSachKhuyenMai = [
+    {TieuDeSuKien:"Khuyến Mãi 1",HinhAnh:'https://media.vietteltelecom.vn/upload/ckfinder/images/3112.png'},
+    {TieuDeSuKien:"Khuyến Mãi 2",HinhAnh:'https://topshare.s3.amazonaws.com/production/posts/pictures/000/000/145/original/kichi-kichi-khuyen-mai.jpg?1502809882'},
+    {TieuDeSuKien:"Khuyến Mãi 3",HinhAnh:'http://giaydantuong365.com/uploads/user/2/khuyenmaigiay/khuyen-mai-giay-dan-tuong-dep-gia-re-cuc-soc.jpg'}, 
+  ]
