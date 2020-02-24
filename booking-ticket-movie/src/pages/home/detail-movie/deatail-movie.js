@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { actGetDetailMovie } from '../../redux/actions'
+import { actGetDetailMovie } from '../../../redux/actions'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 // import Loader from 'react-gif-loader';
@@ -10,7 +10,6 @@ class DetailMovie extends Component {
         const id = this.props.match.params.id;
         //this.props.match.params.id là đương dẫn url lấy detail movie
         this.props.getDetailMovie(id);
-        console.log(this.state)
     }
 
     renderTable = () => {

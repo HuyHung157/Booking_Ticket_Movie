@@ -1,0 +1,25 @@
+.theatres_brandhub_logo{
+    width: 90%;
+    display: block;
+    margin: 0 auto !important;
+    text-align: center;
+    .theatres__logo{
+        height: 100px;
+        width: 100px;
+        text-align: center;
+        display: inline-block ;
+        margin: 0 25px;
+        
+        &:hover{
+            .logo_item{
+                opacity: 1;
+            }
+        }
+        .logo_item{
+            height: 100%;
+            width: 100%;
+            opacity: .5;
+            transition: all .5s;
+        }
+    }
+}

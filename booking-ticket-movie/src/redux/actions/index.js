@@ -1,13 +1,10 @@
 import * as ActionTypes from "../contants/ActionTypes";
+import {movieService, theatresServices} from "../../services";
 import Axios from "axios";
 
 export const actGetListMovieCommingAPI = () => {
   return dispatch => {
-    Axios({
-      method: "GET",
-      url:
-        "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP15&soTrang=1&soPhanTuTrenTrang=8"
-    })
+      movieService.listMovieComming()
       .then(result => {
         dispatch({
           type: ActionTypes.GET_LIST_MOVIES_COMMING,
@@ -22,11 +19,7 @@ export const actGetListMovieCommingAPI = () => {
 
 export const actGetListMovieShowingAPI = () => {
   return dispatch => {
-    Axios({
-      method: "GET",
-      url:
-        "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP15&soTrang=2&soPhanTuTrenTrang=8"
-    })
+      movieService.listMovieShowing()
       .then(result => {
         dispatch({
           type: ActionTypes.GET_LIST_MOVIES_SHOWING,
@@ -41,11 +34,7 @@ export const actGetListMovieShowingAPI = () => {
 
 export const actGetListMovieAPI = () => {
   return dispatch => {
-    Axios({
-      method: "GET",
-      url:
-        "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP15"
-    })
+    movieService.listMovie()
       .then(result => {
         dispatch({
           type: ActionTypes.GET_LIST_MOVIES,
@@ -60,10 +49,7 @@ export const actGetListMovieAPI = () => {
 
 export const actGetDetailMovie = (id) => {
   return dispatch => {
-    Axios({
-      method: "GET",
-      url: `http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=${id}`
-    })
+    movieService.detailMovie(id)
     .then(result => {
       dispatch({
         type: ActionTypes.GET_DETAIL_MOVIE,
@@ -75,6 +61,22 @@ export const actGetDetailMovie = (id) => {
     });
   }
 }
+
+export const actGetListLogoTheatresAPI = () => {
+  return dispatch => {
+    theatresServices.ListLogoTheatres()
+      .then(result => {
+        console.log(result);
+        dispatch({
+          type: ActionTypes.GET_LIST_LOGO_THEATRES,
+          listLogoTheatres: result.data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+};
 
 export const actLoginAdmin = (user, history) => {
   return dispatch => {

@@ -16,6 +16,7 @@ export default class Movie extends Component {
   };
   
   render() {
+    // console.log(this.props);
     let { movie } = this.props;
     const { open } = this.state;
     return (

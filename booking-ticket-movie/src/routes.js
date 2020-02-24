@@ -1,8 +1,8 @@
 // import React from 'react'
 import Home from './pages/home/home';
-import Login from './pages/home/login';
-import DetailMovie from './pages/home/deatail-movie';
-import Booking from './pages/home/booking-tickets';
+import Login from './pages/home/login/login';
+import DetailMovie from './pages/home/detail-movie/deatail-movie';
+import Booking from './pages/home/booking-tickets/booking-tickets';
 import PageNotFound from './pages/page-not-found';
 
 const routesHome = [

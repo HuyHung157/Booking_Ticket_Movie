@@ -1,3 +1,5 @@
+@import "./theatres_logo/theatresLogo.scss";
+
 .theatres {
 	height: 500px;
 	width: 100%;
@@ -7,8 +9,10 @@
 	.theatres__padding {
 		padding: 100px;
 		.theatres__content {
-			width: 50%;
-			height: 500px;
+			// width: 50%;
+			// height: 500px;
+			margin: 0 auto !important;
+			text-align: center
 		}
 	}
 }

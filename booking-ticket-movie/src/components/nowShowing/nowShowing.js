@@ -23,7 +23,7 @@ class NowShowing extends Component {
   }
 
   renderHTML = () => {
-    console.log(this.props);
+    
     return this.props.listMovieShowing.map((movie, index) => {
       return <Movie key={index} movie={movie} />;
     });

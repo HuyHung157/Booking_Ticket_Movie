@@ -5,7 +5,6 @@ let initialState = {
   listMovieComming: [],
   listMovieShowing: [],
   movie: {},
-
 };
 
 const movieReducer = (state = initialState, action) => {

@@ -10,7 +10,7 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <Header />
+                {/* <Header /> */}
                 <div className="slider_bookingform">
                     <Carousel />
                     <Bookingform />

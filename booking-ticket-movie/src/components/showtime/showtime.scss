@@ -15,17 +15,23 @@
 					outline: none;
 					.MuiTab-wrapper {
 						font-size: 25px;
+						transition: font-size .5s;
 					}
-					.PrivateTabIndicator-colorPrimary-55 {
-						background-color: $color-red-0;
+						// .PrivateTabIndicator-colorPrimary-55 {
+						// 	background-color: $color-red-0;
+					.MuiTabs-indicator{
+						background-color: transparent;
 					}
 				}
 				.MuiTab-textColorPrimary {
 					outline: none;
-					transition: all .5s;
+					transition: color .5s;
 					color: $color-white-2;
 					&:hover {
 						color: $color-red-1;
+						.MuiTab-wrapper{
+							font-size: 30px;
+						}
 					}
 				}
 				.MuiTab-textColorPrimary.Mui-selected {

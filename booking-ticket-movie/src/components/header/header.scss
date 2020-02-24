@@ -95,19 +95,73 @@
 		}
 	}
 }
-@media only screen and (max-width: 1680px) {
+@media screen and (max-width: 1365px) {
 	.header {
         position: fixed;
         font-size: 0.9em;
 		.navbar {
 			.navbar_brand {
-                width: 40%;
+                top: 0;
+                width: 54%;
+                padding: 0 !important;
+				a{
+                    display: block !important;
+                    img {
+                        top: 0;
+                        height: 50px;
+                        width: auto;
+                    }
+                }
+            }
+            .navbar_menu {
+                width: 45%;
+                padding: 0 !important;
+                .navbar-nav {
+                    margin: 0;
+                    width: 100% !important;
+                    height: 250px;
+                    margin-top: 10px;
+                    .nav_item {
+                        line-height: 35px;
+                        padding: 0 !important;
+                    }
+                    .nav_login{
+                        margin: 0 auto !important;
+                        i{
+                            display: none;
+                        }
+                        a{
+                            color: $color-blue-0 !important;
+                            &:hover{
+                                color: $color-red-1 !important;
+                            }
+                        }
+                    }
+                }
+            }
+            .nav_toggle{
+                .navbar-toggler-icon{
+                    display: inline !important;
+                }
+            }
+			
+		}
+	}
+}
+@media screen and (max-width:800px) {
+	.header {
+        position: fixed;
+        font-size: 0.9em;
+		.navbar {
+			.navbar_brand {
+                width: 60%;
 				img {
-					height: 60px;
+					height: 50px !important;
 					width: auto;
 				}
             }
             .navbar_menu {
+                width: 40%;
                 .navbar-nav {
                     margin: 0;
                     width: 100%;
@@ -141,8 +195,7 @@
 		}
 	}
 }
-
-@media only screen and (max-width: 968px) { 
+@media screen and (max-width: 968px) { 
 	.header {
         font-size: 0.8em;
         position: relative;
@@ -169,7 +222,7 @@
 		}
 	}
 }
-@media only screen and (max-width: 575px) { 
+@media screen and (max-width: 575px) { 
 	.header {
         font-size: 0.7em;
 		.navbar {
