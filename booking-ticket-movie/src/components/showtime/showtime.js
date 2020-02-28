@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import {  useTheme } from "@material-ui/core/styles";
 import SwipeableViews from 'react-swipeable-views';
 import { Box, Paper, Typography, Tab, Tabs } from "@material-ui/core";
 import NowShowing from "../nowShowing/nowShowing";
@@ -29,21 +29,21 @@ TabPanel.propTypes = {
   value: PropTypes.any.isRequired
 };
 
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`
-  };
-}
+// function a11yProps(index) {
+//   return {
+//     id: `simple-tab-${index}`,
+//     "aria-controls": `simple-tabpanel-${index}`
+//   };
+// }
 
-const useStyles = makeStyles({
-  root: {
-    flexGrow: 1,
-  },
-});
+// const useStyles = makeStyles({
+//   root: {
+//     flexGrow: 1,
+//   },
+// });
 
 export default function Showtime() {
-  const classes = useStyles();
+  // const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
 

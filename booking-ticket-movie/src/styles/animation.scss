@@ -6,6 +6,6 @@
 	width: 100%;
 	height: 100%;
 	z-index: 9999;
-	background: url(%PUBLIC/img/loader.gif) center no-repeat $color-black-1;
+	background: url(%PUBLIC_URL%/img/loader.gif) center no-repeat $color-black-1;
 	transition: all 0.05s;
 }

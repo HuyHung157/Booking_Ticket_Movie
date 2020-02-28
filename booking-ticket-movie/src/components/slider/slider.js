@@ -27,31 +27,31 @@ export default class Slider extends Component {
       <div className="slider">
         <SlickSlider ref={c => (this.slider = c)} {...settings}>
           <div className="slider__item">
-            <a className="overplay" onClick={this.onOpenModal}>
-              <img className="card_img_top" src="http://movie0706.cybersoft.edu.vn/hinhanh/4444444444_gp03.jpg" />
+            <a className="overplay" href="/" onClick={this.onOpenModal}>
+              <img className="card_img_top" alt="slider" src="http://movie0706.cybersoft.edu.vn/hinhanh/4444444444_gp03.jpg" />
               <div className="btn_trailer"> <i className="fa fa-play-circle"></i> </div>
             </a>
           </div>
           <div className="slider__item">
-            <a className="overplay" onClick={this.onOpenModal}>
-              <img className="card_img_top" src="http://movie0706.cybersoft.edu.vn/hinhanh/test003_gp11.jpg" />
+            <a className="overplay" href="/" onClick={this.onOpenModal}>
+              <img className="card_img_top" alt="slider" src="http://movie0706.cybersoft.edu.vn/hinhanh/test003_gp11.jpg" />
               <div className="btn_trailer"> <i className="fa fa-play-circle"></i> </div>
             </a>
           </div>
           <div className="slider__item">
-            <a className="overplay" onClick={this.onOpenModal}>
-              <img className="card_img_top" src="http://movie0706.cybersoft.edu.vn/hinhanh/avenger-infinity-war_gp10.jpg" />
+            <a className="overplay" href="/" onClick={this.onOpenModal}>
+              <img className="card_img_top" alt="slider" src="http://movie0706.cybersoft.edu.vn/hinhanh/avenger-infinity-war_gp10.jpg" />
               <div className="btn_trailer"> <i className="fa fa-play-circle"></i> </div>
             </a>
           </div>
           <div className="slider__item">
-            <a className="overplay" onClick={this.onOpenModal}>
-              <img className="card_img_top" src="http://movie0706.cybersoft.edu.vn/hinhanh/avengers-endgame_gp15.jpg" />
+            <a className="overplay" href="/" onClick={this.onOpenModal}>
+              <img className="card_img_top" alt="slider" src="http://movie0706.cybersoft.edu.vn/hinhanh/avengers-endgame_gp15.jpg" />
               <div className="btn_trailer"> <i className="fa fa-play-circle"></i> </div>
             </a>
           </div><div className="slider__item">
-            <a className="overplay" onClick={this.onOpenModal}>
-              <img className="card_img_top" src="http://movie0706.cybersoft.edu.vn/hinhanh/chuyen-ngay-xua-o-hollywood_gp10.jpg" />
+            <a className="overplay" href="/" onClick={this.onOpenModal}>
+              <img className="card_img_top" alt="slider" src="http://movie0706.cybersoft.edu.vn/hinhanh/chuyen-ngay-xua-o-hollywood_gp10.jpg" />
               <div className="btn_trailer"> <i className="fa fa-play-circle"></i> </div>
             </a>
           </div>

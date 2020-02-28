@@ -1,6 +1,6 @@
 import * as ActionTypes from "../contants/ActionTypes";
 import {movieService, theatresServices} from "../../services";
-import Axios from "axios";
+// import Axios from "axios";
 
 export const actGetListMovieCommingAPI = () => {
   return dispatch => {
@@ -62,14 +62,13 @@ export const actGetDetailMovie = (id) => {
   }
 }
 
-export const actGetListLogoTheatresAPI = () => {
+export const actGetListSystemTheatresAPI = () => {
   return dispatch => {
-    theatresServices.ListLogoTheatres()
+    theatresServices.ListSystemTheatres()
       .then(result => {
-        console.log(result);
         dispatch({
-          type: ActionTypes.GET_LIST_LOGO_THEATRES,
-          listLogoTheatres: result.data
+          type: ActionTypes.GET_LIST_SYSTEM_THEATRES,
+          listSystemTheatres: result.data
         });
       })
       .catch(err => {
@@ -78,25 +77,69 @@ export const actGetListLogoTheatresAPI = () => {
   };
 };
 
-export const actLoginAdmin = (user, history) => {
+export const actGetListDetailsTheatresAPI = (SystemTheatres) => {
   return dispatch => {
-    Axios({
-      method: "POST",
-      url: "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap",
-      data:user
-    })
-      .then(result => {
-          console.log(result.data);
-          if(result.data.maLoaiNguoiDung === "QuanTri"){
-            localStorage.setItem("UserAdmin", JSON.stringify(result.data));
-            alert("Login Success");
-            history.push("/dashboard");
-          }else{
-            alert("K co quyen truy cap vao he thong");
-          }
-      })
-      .catch(err => {
-        console.log(err);
+    theatresServices.DetailTheatres(SystemTheatres)
+    .then(result => {
+      dispatch({
+        type: ActionTypes.GET_DETAIL_BRANCH_THEATRES,
+        listBranchTheatres: result.data
       });
-  };
-};
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
+}
+
+export const actSetActiveLogo = activeLogo => {
+  return {
+    type: ActionTypes.SET_ACTIVE_LOGO,
+    activeLogo
+  } 
+}
+
+export const actSetActiveBranch = activeBranch => {
+  return {
+    type: ActionTypes.SET_ACTIVE_BRANCH,
+    activeBranch
+  } 
+}
+
+export const actSetActiveListMovie = activeListMovie => {
+  return {
+    type: ActionTypes.SET_ACTIVE_LISTMOVIE,
+    activeListMovie
+  } 
+}
+
+export const actGetSystemTheatresForCustom = systemTheatresForCustom => {
+  return {
+    type: ActionTypes.GET_SYSTEM_THEATRES,
+    systemTheatresForCustom
+  } 
+}
+
+
+// export const actLoginAdmin = (user, history) => {
+//   return dispatch => {
+//     Axios({
+//       method: "POST",
+//       url: "http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap",
+//       data:user
+//     })
+//       .then(result => {
+//           console.log(result.data);
+//           if(result.data.maLoaiNguoiDung === "QuanTri"){
+//             localStorage.setItem("UserAdmin", JSON.stringify(result.data));
+//             alert("Login Success");
+//             history.push("/dashboard");
+//           }else{
+//             alert("K co quyen truy cap vao he thong");
+//           }
+//       })
+//       .catch(err => {
+//         console.log(err);
+//       });
+//   };
+// };

@@ -1,46 +1,73 @@
 import React, { Component } from "react";
-import Movie from "../../movie/movie";
 import { connect } from "react-redux";
 import * as actions from "../../../redux/actions";
 
 class TheatresLogo extends Component {
 
-    componentDidMount() {
-        this.props.getLogoTheatres();
+    handleOnClickLogo = (activeLogo, SystemBranch) => {
+        const { setActiveLogo, setActiveBranch, getListMovieShowTimeinTheatres, getSystemTheatresForCustom} = this.props;
+        setActiveLogo(activeLogo);
+        setActiveBranch(0);
+        getListMovieShowTimeinTheatres(SystemBranch);
+        getSystemTheatresForCustom(SystemBranch);
     }
 
-    renderHTML = () => {
-        return this.props.listLogoTheatres.map((theatresLogo, index) => {
-            return <Movie key={index} movie={theatresLogo} />;
+
+    renderListLogo = () => {
+        return this.props.listLogo.map((theatresLogo, index) => {
+            return (
+                <li className="logo__item" key={index}>
+                    <img
+                        onClick={() => this.handleOnClickLogo(index, theatresLogo.maHeThongRap)}
+                        className={
+                            index === this.props.activeLogo
+                                ? "logo__img logo__img--active"
+                                : "logo__img"
+                        }
+                        src={theatresLogo.logo}
+                        alt={theatresLogo.logo}
+                    />
+                </li>
+            )
         });
     };
 
     render() {
-        let { listLogoTheatres } = this.props;
+        // console.log(this.props)
         return (
             <div className="theatres_brandhub_logo ">{
-                listLogoTheatres.map((theatres, index) => {
-                    return (
-                        <div key={index} className="theatres__logo">
-                            <img className="logo_item" src={theatres.logo} />
-                        </div>)
-                })
+                <ul className="logo__list">
+                    {this.renderListLogo()}
+                </ul>
             }</div>
+
         )
     }
 }
 
 const mapStateToProps = state => {
     return {
-        listLogoTheatres: state.theatresReducer.listLogoTheatres
+        listLogoTheatres: state.theatresReducer.listSystemTheatres,
+        activeLogo: state.theatresReducer.activeLogo
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        getLogoTheatres: () => {
-            dispatch(actions.actGetListLogoTheatresAPI());
-        }
+        setActiveBranch: activeBranch => {
+            dispatch(actions.actSetActiveBranch(activeBranch));
+        },
+        setActiveLogo: (activeLogo) => {
+            dispatch(actions.actSetActiveLogo(activeLogo));
+        },
+        getListMovieShowTimeinTheatres: (SystemTheatres = "BHDStar") => {
+            dispatch(
+                actions.actGetListDetailsTheatresAPI(SystemTheatres)
+            );
+        },
+        getSystemTheatresForCustom: (systemTheatresForCustom= "BHDStar") => {
+            dispatch(actions.actGetSystemTheatresForCustom(systemTheatresForCustom));
+        },
     };
 };
 

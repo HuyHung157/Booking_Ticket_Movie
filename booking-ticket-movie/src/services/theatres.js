@@ -1,7 +1,7 @@
 import Axios from 'axios';
 
 class TheatresServices {
-    ListLogoTheatres(){
+    ListSystemTheatres(){
         return Axios({
             method: "GET",
             url:
@@ -9,21 +9,11 @@ class TheatresServices {
         })
         
     }
-    ListBranchTheatres(){
+    DetailTheatres(SystemTheatres){
         return Axios({
             method: "GET",
-            url:
-                "http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinHeThongRap"
-        })
-        
-    }
-    ListMovieTheatres(){
-        return Axios({
-            method: "GET",
-            url:
-                "http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinHeThongRap"
-        })
-        
+            url: `http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${SystemTheatres}&maNhom=GP15`
+          })
     }
 }
 export default TheatresServices;

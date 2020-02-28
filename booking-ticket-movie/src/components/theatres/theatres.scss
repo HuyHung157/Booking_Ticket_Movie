@@ -1,18 +1,45 @@
 @import "./theatres_logo/theatresLogo.scss";
-
+@import "./theatres_branch/theatresBranch.scss";
+@import "./theatres_branch_movie/theatresBranchMovie.scss";
 .theatres {
-	height: 500px;
-	width: 100%;
-	display: block;
-	background-color: $color-black-3;
-	border: 1px solid black;
+	// height: 500px;
+	// width: 100%;
+	// display: block;
+	// background-color: $color-black-3;
+	// border: 1px solid black;
+	// box-sizing: border-box !important;
+	height: 800px;
+	width: 80%;
+	text-align: center;
+	margin: 0 auto !important;
+	padding-top: 30px !important;
+	// border: 1px solid black;
+	color: white !important;
 	.theatres__padding {
 		padding: 100px;
 		.theatres__content {
 			// width: 50%;
 			// height: 500px;
 			margin: 0 auto !important;
-			text-align: center
+			text-align: center;
+			.theatres__header {
+			}
+			.theatres__wrapper {
+				display: block;
+				width: 100%;
+				margin: 0px auto;
+				display: flex;
+				.theatres__branch {
+					width: 40%;
+					margin-right: 10px;
+					height: 50vh;
+					overflow-y: scroll;
+				}
+				.theatres__listmovie {
+					width: 60%;
+					overflow-y: scroll;
+				}
+			}
 		}
 	}
 }

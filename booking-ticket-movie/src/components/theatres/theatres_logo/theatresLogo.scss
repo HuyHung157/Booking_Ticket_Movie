@@ -1,25 +1,36 @@
 .theatres_brandhub_logo{
     width: 90%;
-    display: block;
-    margin: 0 auto !important;
+    display: block !important;
+    margin: 10px auto !important;
     text-align: center;
-    .theatres__logo{
-        height: 100px;
-        width: 100px;
-        text-align: center;
-        display: inline-block ;
-        margin: 0 25px;
-        
-        &:hover{
-            .logo_item{
-                opacity: 1;
-            }
-        }
-        .logo_item{
-            height: 100%;
+    .logo__list {
+        width: 90%;
+        margin: 20px auto !important;
+        display: flex !important;
+        .logo__item {
+          width: 100px;
+          height: 120px;
+          padding: 20px 0px;
+          margin: 0px auto;
+          .logo__img {
+            display: block !important;
+            margin: 0px auto;
             width: 100%;
-            opacity: .5;
+            height: 100px;
+            opacity: 0.5;
             transition: all .5s;
+          }
+          .logo__img--active {
+            opacity: 1;
+          }
+          &:hover {
+            img {
+              opacity: 1;
+              cursor: pointer;
+              width: 105px;
+              height: 105px;
+            }
+          }
         }
-    }
+      }
 }

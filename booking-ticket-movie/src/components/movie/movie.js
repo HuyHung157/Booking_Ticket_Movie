@@ -21,8 +21,8 @@ export default class Movie extends Component {
     const { open } = this.state;
     return (
       <div className="card">
-        <a className="overplay" onClick={this.onOpenModal}>
-          <img className="card_img_top" src={movie.hinhAnh} alt="" />
+        <a className="overplay" href="/" onClick={this.onOpenModal}>
+          <img className="card_img_top" src={movie.hinhAnh} alt="abc" />
           <div className="btn_trailer"> <i className="fa fa-play-circle"></i> </div>
         </a>
         <div className="card_body">
@@ -44,7 +44,7 @@ export default class Movie extends Component {
           <div className="modal__content">
           <h1 className="modal__title">Phim: {movie.tenPhim} </h1>
           <button className="btn_close_modal" onClick={this.onCloseModal}> <i class="fa fa-times" ></i> </button>
-          <iframe class="modal__trailer" src={movie.trailer}/>
+          <iframe class="modal__trailer" title="Trailer" src={movie.trailer}/>
           </div>
         </Modal>
       </div>
