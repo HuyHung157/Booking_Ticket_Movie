@@ -1,18 +1,25 @@
 import Axios from 'axios';
+import * as API from './config';
 
 class TheatresServices {
     ListSystemTheatres(){
         return Axios({
             method: "GET",
             url:
-                "http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinHeThongRap"
+                `${API.urlAPI}/QuanLyRap/LayThongTinHeThongRap`
         })
         
     }
     DetailTheatres(SystemTheatres){
         return Axios({
             method: "GET",
-            url: `http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${SystemTheatres}&maNhom=GP15`
+            url: `${API.urlAPI}/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${SystemTheatres}`
+          })
+    }
+    ListShowtimeAndInfo(SystemTheatres){
+        return Axios({
+            method: "GET",
+            url: `${API.urlAPI}/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${SystemTheatres}&maNhom=GP01`    
           })
     }
 }

@@ -120,6 +120,35 @@ export const actGetSystemTheatresForCustom = systemTheatresForCustom => {
   } 
 }
 
+// ListShowtime and Infor SystemTheatres
+export const actGetListShowtimeTheatresAPI = (SystemTheatres) => {
+  return dispatch => {
+    theatresServices.ListShowtimeAndInfo(SystemTheatres)
+    .then(result => {
+      dispatch({
+        type: ActionTypes.GET_LIST_SHOWTIME_THEATRES,
+        listShowtimeAndInfoTheatres: result.data
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
+}
+//SetDate
+export const actSetDate = date => {
+  return {
+    type: ActionTypes.SET_ACTIVE_LISTMOVIE,
+    date
+  } 
+}
+export const actsetActiveDate = activeDate => {
+  return {
+    type: ActionTypes.SET_ACTIVE_FOR_DATE,
+    activeDate
+  };
+};
+
 
 // export const actLoginAdmin = (user, history) => {
 //   return dispatch => {

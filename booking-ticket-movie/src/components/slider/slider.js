@@ -28,30 +28,30 @@ export default class Slider extends Component {
         <SlickSlider ref={c => (this.slider = c)} {...settings}>
           <div className="slider__item">
             <a className="overplay" href="/" onClick={this.onOpenModal}>
-              <img className="card_img_top" alt="slider" src="http://movie0706.cybersoft.edu.vn/hinhanh/4444444444_gp03.jpg" />
+              <img className="card_img_top" alt="slider" src="/img/Slider/sonic_banner.jpg" />
               <div className="btn_trailer"> <i className="fa fa-play-circle"></i> </div>
             </a>
           </div>
           <div className="slider__item">
             <a className="overplay" href="/" onClick={this.onOpenModal}>
-              <img className="card_img_top" alt="slider" src="http://movie0706.cybersoft.edu.vn/hinhanh/test003_gp11.jpg" />
+              <img className="card_img_top" alt="slider" src="/img/Slider/onward_banner.jpg" />
               <div className="btn_trailer"> <i className="fa fa-play-circle"></i> </div>
             </a>
           </div>
           <div className="slider__item">
             <a className="overplay" href="/" onClick={this.onOpenModal}>
-              <img className="card_img_top" alt="slider" src="http://movie0706.cybersoft.edu.vn/hinhanh/avenger-infinity-war_gp10.jpg" />
+              <img className="card_img_top" alt="slider" src="/img/Slider/gai-gia-lam-chieu.jpg" />
               <div className="btn_trailer"> <i className="fa fa-play-circle"></i> </div>
             </a>
           </div>
           <div className="slider__item">
             <a className="overplay" href="/" onClick={this.onOpenModal}>
-              <img className="card_img_top" alt="slider" src="http://movie0706.cybersoft.edu.vn/hinhanh/avengers-endgame_gp15.jpg" />
+              <img className="card_img_top" alt="slider" src="/img/Slider/banner_1.jpg" />
               <div className="btn_trailer"> <i className="fa fa-play-circle"></i> </div>
             </a>
           </div><div className="slider__item">
             <a className="overplay" href="/" onClick={this.onOpenModal}>
-              <img className="card_img_top" alt="slider" src="http://movie0706.cybersoft.edu.vn/hinhanh/chuyen-ngay-xua-o-hollywood_gp10.jpg" />
+              <img className="card_img_top" alt="slider" src="/img/Slider/cgv_banner.jpg" />
               <div className="btn_trailer"> <i className="fa fa-play-circle"></i> </div>
             </a>
           </div>

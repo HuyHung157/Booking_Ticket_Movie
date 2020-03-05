@@ -6,6 +6,7 @@
       margin: 15px auto;
       opacity: 0.5;
       text-align: left;
+      transition: all .5s;
       .branch__img {
         display: block;
         width: 70px;
@@ -23,8 +24,16 @@
           margin: 0;
           font-style: italic;
         }
-        a {
+        a{
           font-size: 14px;
+          text-decoration: none;
+          transition: all .5s;
+        }
+        .detail__link{
+          :hover{
+            color: white !important;
+            font-size: larger;
+          }
         }
       }
       &:hover {

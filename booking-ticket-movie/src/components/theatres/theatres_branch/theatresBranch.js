@@ -10,12 +10,12 @@ class TheatresBranch extends Component {
     }
     renderTheatresList = () => {
         const { listBranch, activeBranch, systemTheatresForCustom } = this.props;
-        console.log(systemTheatresForCustom)
         if (listBranch && listBranch.length > 0) {
             return listBranch.map((branch, index) => {
                 return (
                     <li
                         key={index}
+                    
                         className={
                             index === activeBranch
                                 ? "branch__item branch__item--active "
@@ -29,9 +29,9 @@ class TheatresBranch extends Component {
                             alt={systemTheatresForCustom}
                         />
                         <div className="branch__detail">
-                            <h3>{branch.tenCumRap}</h3>
+                            <h3 className={`detail__title ${systemTheatresForCustom}`}>{branch.tenCumRap}</h3>
                             <p>{branch.diaChi}</p>
-                            <Link to="#" className={systemTheatresForCustom}>[detail]</Link>
+                            <Link to="#" className={`detail__link ${systemTheatresForCustom}`}>[detail]</Link>
                         </div>
                     </li>
                 )
@@ -57,11 +57,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        // getListMovieShowTimeinTheatres: (SystemTheatres = "BHDStar") => {
-        //     dispatch(
-        //         actions.actGetListDetailsTheatresAPI(SystemTheatres)
-        //     );
-        // },
+        getListMovieShowTimeinTheatres: (SystemTheatres = "BHDStar") => {
+            dispatch(
+                actions.actGetListShowtimeTheatresAPI(SystemTheatres)
+            );
+        },
         setActiveBranch: activeBranch => {
             dispatch(actions.actSetActiveBranch(activeBranch));
         },

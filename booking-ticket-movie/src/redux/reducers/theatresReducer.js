@@ -3,10 +3,14 @@ import * as ActionType from "../contants/ActionTypes";
 let initialState = {
   listSystemTheatres: [],
   listBranchTheatres: [],
+  listShowtimeAndInfoTheatres: [],
+  allListMovie: [],
   activeLogo: 0,
   activeBranch: 0,
   activeListMovie: 0,
   systemTheatresForCustom: "BHDStar",
+  activeDate: "2019-01-01",
+  date: Date.parse("1/1/2019")
 };
 
 const theatresReducer = (state = initialState, action) => {
@@ -31,6 +35,15 @@ const theatresReducer = (state = initialState, action) => {
       case ActionType.GET_SYSTEM_THEATRES:
       state.systemTheatresForCustom = action.systemTheatresForCustom;
       return { ...state };
+      case ActionType.GET_LIST_SHOWTIME_THEATRES:
+      state.listShowtimeAndInfoTheatres = action.listShowtimeAndInfoTheatres[0];
+      return { ...state };
+      case ActionType.SET_DATE:
+        state.date = parseInt(action.date);
+        return { ...state };
+        case ActionType.SET_ACTIVE_FOR_DATE:
+          state.activeDate = action.activeDate;
+          return { ...state };
     default:
       return { ...state };
   }

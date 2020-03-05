@@ -5,10 +5,11 @@ import * as actions from "../../../redux/actions";
 class TheatresLogo extends Component {
 
     handleOnClickLogo = (activeLogo, SystemBranch) => {
-        const { setActiveLogo, setActiveBranch, getListMovieShowTimeinTheatres, getSystemTheatresForCustom} = this.props;
+        const { setActiveLogo, setActiveBranch, getDetailsTheatres, getListShowTimeMoviesAndInfor, getSystemTheatresForCustom} = this.props;
         setActiveLogo(activeLogo);
         setActiveBranch(0);
-        getListMovieShowTimeinTheatres(SystemBranch);
+        getDetailsTheatres(SystemBranch);
+        getListShowTimeMoviesAndInfor(SystemBranch);
         getSystemTheatresForCustom(SystemBranch);
     }
 
@@ -60,9 +61,14 @@ const mapDispatchToProps = dispatch => {
         setActiveLogo: (activeLogo) => {
             dispatch(actions.actSetActiveLogo(activeLogo));
         },
-        getListMovieShowTimeinTheatres: (SystemTheatres = "BHDStar") => {
+        getDetailsTheatres: (SystemTheatres = "BHDStar") => {
             dispatch(
                 actions.actGetListDetailsTheatresAPI(SystemTheatres)
+            );
+        },
+        getListShowTimeMoviesAndInfor: (SystemTheatres = "BHDStar") => {
+            dispatch(
+                actions.actGetListShowtimeTheatresAPI(SystemTheatres)
             );
         },
         getSystemTheatresForCustom: (systemTheatresForCustom= "BHDStar") => {

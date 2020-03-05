@@ -1,11 +1,11 @@
 import Axios from 'axios';
+import * as API from './config';
 
 class MovieService {
     listMovie(){
         return Axios({
             method: "GET",
-            url:
-                "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP15"
+            url: `${API.urlAPI}/QuanLyPhim/LayDanhSachPhim?maNhom=GP01`,
         })
         
     }
@@ -13,20 +13,20 @@ class MovieService {
         return Axios({
             method: "GET",
             url:
-              "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP15&soTrang=2&soPhanTuTrenTrang=8"
+            `${API.urlAPI}/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP01&soTrang=1&soPhanTuTrenTrang=8`
           })
     };
     listMovieComming() {
         return Axios({
             method: "GET",
             url:
-                "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP15&soTrang=1&soPhanTuTrenTrang=8"
+            `${API.urlAPI}/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP01&soTrang=2&soPhanTuTrenTrang=8`    
         })
     };
     detailMovie(id){
         return Axios({
             method: "GET",
-            url: `http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=${id}`
+            url: `${API.urlAPI}/QuanLyPhim/LayThongTinPhim?MaPhim=${id}`
           })
     }
     

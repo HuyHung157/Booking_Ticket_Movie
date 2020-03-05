@@ -1,0 +1,60 @@
+.film__list {
+	.listfilm__item_right {
+		text-align: left;
+		display: flex;
+		margin-bottom: 10px;
+		.listfilm__img {
+			display: block;
+			width: 80px;
+			height: 100px;
+			margin-right: 10px;
+		}
+		.lisfilm__info_right {
+			.lisfilm__infor_title {
+				color: $color-red-0;
+				margin-bottom: 0;
+			}
+			.lisfilm__infor_reward {
+				display: inline;
+				font-style: italic;
+				margin-right: 5px;
+			}
+			.reward {
+				display: inline;
+				font-weight: bold;
+				.icon_star {
+					color: yellow;
+				}
+			}
+		}
+	}
+	.icon_wrong {
+		height: 100px;
+		width: auto;
+	}
+}
+.tlist-date {
+    display: flex;
+    // flex-wrap: wrap;
+    .tlist-date__item {
+      padding: 10px;
+      text-align: center;
+      color: white;
+      font-size: 15px;
+      border: 1px solid white;
+      border-radius: 15px;
+      margin: 7px;
+      &:hover {
+        cursor: pointer;
+        background-color: yellow;
+        border: 1px solid yellow;
+        color: black;
+      }
+    }
+    .tlist-date__item--active {
+      background-color: yellow;
+      border: 1px solid yellow;
+      color: black;
+    }
+    
+  }
