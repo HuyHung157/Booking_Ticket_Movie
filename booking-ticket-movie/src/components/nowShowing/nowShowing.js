@@ -75,7 +75,7 @@ class NowShowing extends Component {
             <i className="fa fa-chevron-left"></i>
           </button>
           <button className="btn_next_slide arrow_btn" onClick={this.next}>
-            <i className="fa fa-chevron-right"></i>
+          <i className="fa fa-chevron-right"></i>
           </button>
         </div>
       </div>

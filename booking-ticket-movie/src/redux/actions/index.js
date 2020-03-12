@@ -1,10 +1,10 @@
 import * as ActionTypes from "../contants/ActionTypes";
-import {movieService, theatresServices} from "../../services";
+import { movieService, theatresServices, authServices } from "../../services";
 // import Axios from "axios";
 
 export const actGetListMovieCommingAPI = () => {
   return dispatch => {
-      movieService.listMovieComming()
+    movieService.listMovieComming()
       .then(result => {
         dispatch({
           type: ActionTypes.GET_LIST_MOVIES_COMMING,
@@ -19,7 +19,7 @@ export const actGetListMovieCommingAPI = () => {
 
 export const actGetListMovieShowingAPI = () => {
   return dispatch => {
-      movieService.listMovieShowing()
+    movieService.listMovieShowing()
       .then(result => {
         dispatch({
           type: ActionTypes.GET_LIST_MOVIES_SHOWING,
@@ -50,17 +50,18 @@ export const actGetListMovieAPI = () => {
 export const actGetDetailMovie = (id) => {
   return dispatch => {
     movieService.detailMovie(id)
-    .then(result => {
-      dispatch({
-        type: ActionTypes.GET_DETAIL_MOVIE,
-        movie: result.data
+      .then(result => {
+        dispatch({
+          type: ActionTypes.GET_DETAIL_MOVIE,
+          movie: result.data
+        });
+      })
+      .catch(err => {
+        console.log(err);
       });
-    })
-    .catch(err => {
-      console.log(err);
-    });
   }
 }
+
 
 export const actGetListSystemTheatresAPI = () => {
   return dispatch => {
@@ -80,15 +81,15 @@ export const actGetListSystemTheatresAPI = () => {
 export const actGetListDetailsTheatresAPI = (SystemTheatres) => {
   return dispatch => {
     theatresServices.DetailTheatres(SystemTheatres)
-    .then(result => {
-      dispatch({
-        type: ActionTypes.GET_DETAIL_BRANCH_THEATRES,
-        listBranchTheatres: result.data
+      .then(result => {
+        dispatch({
+          type: ActionTypes.GET_DETAIL_BRANCH_THEATRES,
+          listBranchTheatres: result.data
+        });
+      })
+      .catch(err => {
+        console.log(err);
       });
-    })
-    .catch(err => {
-      console.log(err);
-    });
   }
 }
 
@@ -96,51 +97,51 @@ export const actSetActiveLogo = activeLogo => {
   return {
     type: ActionTypes.SET_ACTIVE_LOGO,
     activeLogo
-  } 
+  }
 }
 
 export const actSetActiveBranch = activeBranch => {
   return {
     type: ActionTypes.SET_ACTIVE_BRANCH,
     activeBranch
-  } 
+  }
 }
 
 export const actSetActiveListMovie = activeListMovie => {
   return {
     type: ActionTypes.SET_ACTIVE_LISTMOVIE,
     activeListMovie
-  } 
+  }
 }
 
 export const actGetSystemTheatresForCustom = systemTheatresForCustom => {
   return {
     type: ActionTypes.GET_SYSTEM_THEATRES,
     systemTheatresForCustom
-  } 
+  }
 }
 
 // ListShowtime and Infor SystemTheatres
 export const actGetListShowtimeTheatresAPI = (SystemTheatres) => {
   return dispatch => {
     theatresServices.ListShowtimeAndInfo(SystemTheatres)
-    .then(result => {
-      dispatch({
-        type: ActionTypes.GET_LIST_SHOWTIME_THEATRES,
-        listShowtimeAndInfoTheatres: result.data
+      .then(result => {
+        dispatch({
+          type: ActionTypes.GET_LIST_SHOWTIME_THEATRES,
+          listShowtimeAndInfoTheatres: result.data
+        });
+      })
+      .catch(err => {
+        console.log(err);
       });
-    })
-    .catch(err => {
-      console.log(err);
-    });
   }
 }
 //SetDate
 export const actSetDate = date => {
   return {
-    type: ActionTypes.SET_ACTIVE_LISTMOVIE,
+    type: ActionTypes.SET_DATE,
     date
-  } 
+  }
 }
 export const actsetActiveDate = activeDate => {
   return {
@@ -172,3 +173,52 @@ export const actsetActiveDate = activeDate => {
 //       });
 //   };
 // };
+
+
+//Login
+export const actSignInAPI = (user, history) => {
+  return dispatch => {
+    authServices.AuthSignIn(user)
+      .then(result => {
+        console.log(result.data);
+        if (result.data.maLoaiNguoiDung === "QuanTri") {
+          localStorage.setItem("User", JSON.stringify(result.data));
+          alert("Đăng nhập thành công");
+          history.push("/dashboard");
+        } else if(result.data.maLoaiNguoiDung === "KhachHang"){
+          localStorage.setItem("User", JSON.stringify(result.data));
+          alert("Đăng nhập thành công");
+          history.push("/");
+        } else {
+          alert("Tài khoản hoặc mật khẩu không đúng!");
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+};
+//SignUp
+export const actSignUpAPI = (user, history) => {
+  return dispatch => {
+    authServices.AuthSignUp(user)
+    .then(result => {
+      alert("Đăng ký thành công");
+      history.push("/sign-in");
+      dispatch({
+        type: ActionTypes.SIGN_IN,
+        infoUser: result.data
+      });
+    })
+    .catch(err => {
+      alert("Đăng ký không thành công");
+      console.log(err);
+    });
+  };
+};
+// SignOut
+export const actSignOut = () => {
+  return {
+    type: ActionTypes.SIGN_OUT
+  };
+};

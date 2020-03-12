@@ -1,0 +1,91 @@
+.page__signup {
+	background-color: $color-white-0;
+		width: 600px;
+		margin: 50px auto 10px auto !important;
+		padding: 30px;
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 2px 10px -3px $color-black-1;
+		text-align: center;
+	.signup_img {
+		display: block !important;
+		width: 80px;
+		margin: 30px auto 20px !important;
+		box-shadow: 0 5px 10px -7px $color-black-1;
+		border-radius: 50%;
+	}
+	.signup__heading {
+		color: $color-black-1;
+		.signup__headingText {
+			font-size: 40px;
+		}
+		.signup__headingSubtext {
+			font-size: 17px;
+			padding-top: 10px !important;
+			.signup__headingSubtext_brand {
+				text-decoration: none;
+				color: $color-red-0 !important;
+				text-decoration: underline;
+				cursor: pointer;
+				transition: all .5s;
+				&:hover {
+					color: $color-blue-0 !important;
+					font-size: 19px;
+				}
+			}
+		}
+	}
+	.form_signup {			
+        .row{
+            margin: 0 !important;
+        }
+		input{
+			border-radius: 100px;
+			padding: 10px 15px !important;
+			width: 100%;
+			border: 1px solid $color-white-4;
+			outline: none;
+			display: block !important;
+            margin: 10px auto !important;
+            transition: all 0.5s;
+            &:focus{
+                border: 1px solid transparentize($color: $color-blue-5, $amount: 0.6);
+                // background-image: linear-gradient(to right, yellow, $color-red-0) !important;
+            }
+            &:hover{
+                background-color: transparentize($color: $color-blue-5, $amount: 0.8);
+                border: 1px solid $color-blue-5;
+            }
+		}
+		.form-control {
+			height: auto;
+		}
+		.error{
+			display: block;
+			text-align: left;
+			font-size: 15px;
+			// background-color: gray;
+		}
+		.form-control.is-invalid{
+			border: 2px dotted $color-red-0 !important;
+		}
+
+		.btn__submit_signup {
+			border-radius: 100px;
+			border: none;
+			background: $color-blue-5 !important;
+			width: 70%;
+			padding: 11px !important;
+			color: $color-white-0;
+			box-shadow: 0 2px 10px -3px $color-blue-4;
+			display: block !important;
+			margin: 55px auto 10px auto !important;
+			margin-top: 25px !important;
+			transition: all .5s;
+			outline: none;
+			&:hover {
+				background-color: $color-blue-3 !important;
+			}
+		}
+	}
+}

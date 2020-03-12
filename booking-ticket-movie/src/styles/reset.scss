@@ -13,12 +13,16 @@ body {
 }
 
 a {
-	text-decoration: none;
-	:hover{
-		color: red !important;
-	}
+	text-decoration: none !important;
 }
-
+input[type=number] {
+	-moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 ul {
 	list-style: none;
 }

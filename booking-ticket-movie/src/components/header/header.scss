@@ -49,6 +49,53 @@
                                               
 					}
                 }
+                .header__login--auth {
+                    position: relative;
+                    .header__user-menu {
+                      display: block !important;
+                      position: absolute;
+                      width: 130px;
+                      top: 30px;
+                      right: 0px;
+                      opacity: 0;
+                      padding-top: 10px;
+                      visibility: hidden;
+                      li {
+                        background-color: black;
+                        text-align: center;
+                        border-bottom: 1px solid white;
+                        padding: 5px;
+                        a {
+                          font-size: 15px;
+                          color: white;
+                        }
+                      }
+                    }
+                    &:hover {
+                      .header__user-menu {
+                        opacity: 1;
+                        visibility: visible;
+                      }
+                    }
+                    .header__login--wrapper {
+                        display: flex;
+                        .header__avatar {
+                          width: 50px;
+                          height: 50px;
+                          border-radius: 50%;
+                        }
+                        .header__user {
+                          margin-left: 5px;
+                          color: $color-white-0;
+                        //   line-height: 30px;
+                          font-size: 25px;
+                        }
+                        &:hover {
+                          cursor: pointer;
+                        }
+                      }
+                  }
+                
                 .nav_login {
                     margin-left: 120px;
                     &:hover i{
@@ -91,10 +138,12 @@
 		}
 		
 		.nav_toggle {
-			font-size: 2em;
+            font-size: 2em;
+            color:$color-white-0;
 		}
 	}
 }
+
 @media screen and (max-width: 1365px) {
 	.header {
         position: fixed;

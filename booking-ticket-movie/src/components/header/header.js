@@ -1,9 +1,29 @@
 import React, { Component } from 'react';
 import '../../../node_modules/font-awesome/css/font-awesome.min.css';
 import { Link } from "react-router-dom";
+import * as action from '../../redux/actions';
+import {connect} from "react-redux";
+import authReducer from '../../redux/reducers/authReducer';
+class Header extends Component {
 
-export default class Header extends Component {
+    scrollToSection(id) {
+        switch (id) {
+            case "theatres":
+                var elmnt = document.getElementById("theatres");
+                elmnt.scrollIntoView();
+                break;
+            case "showtime":
+                var elmnt = document.getElementById("showtime");
+                elmnt.scrollIntoView();
+                break;
+        } // Top
+    }
+    handleSignOut = () => {
+        this.props.signOutUser();
+        // console.log("abc")
+    }
     render() {
+        const { infoUser } = this.props;
         return (
             <div>
                 <div className="padding_header"></div>
@@ -22,16 +42,51 @@ export default class Header extends Component {
                         <div className="collapse navbar_menu navbar-collapse col-lg-9" id="navb">
                             <ul className="navbar-nav ">
                                 <li className="nav_item">
-                                    <a className="nav_link" href="#showtime">LỊCH CHIẾU</a>
+                                    <a className="nav_link" onClick={() => this.scrollToSection("showtime")} >LỊCH CHIẾU</a>
                                 </li>
                                 <li className="nav_item">
-                                    <a className="nav_link" href="#theatres">CỤM RẠP</a>
+                                    <a className="nav_link" onClick={() => this.scrollToSection("theatres")}>CỤM RẠP</a>
                                 </li>
                                 {/* Login */}
-                                <li className="nav_login nav_item">
-                                    <i className="fa fa-user" />
-                                    <Link to="/login"> ĐĂNG NHẬP</Link>
-                                </li>
+                                {infoUser ? (
+                                    <div className="nav_item header__login--auth">
+                                        <div className="header__login--wrapper">
+                                            <img
+                                                className="header__avatar"
+                                                src="https://cdn11.ticketnew.com/images/profile-image.svg"
+                                                alt=""
+                                            />
+                                            <p className="header__user">Hi, {infoUser.hoTen}</p>
+                                        </div>
+                                        <ul className="header__user-menu">
+                                            <li>
+                                                <Link
+                                                    className="nav-link"
+                                                    to={`/account/${infoUser.taiKhoan}`}
+                                                >
+                                                    My Account
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link
+                                                    onClick={()=>this.handleSignOut}
+                                                    className="nav-link"
+                                                    to="/sign-in"
+                                                >
+                                                    Sign Out
+                                                </Link>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                ) : (
+                                        <>
+                                            <li className="nav_login nav_item">
+                                                <i className="fa fa-user" />
+                                                <Link to="/sign-in"> ĐĂNG NHẬP</Link>
+                                            </li>
+                                        </>
+                                    )}
+
                             </ul>
                         </div>
                     </nav>
@@ -40,3 +95,18 @@ export default class Header extends Component {
         )
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        infoUser: state.authReducer.infoUser
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        signOutUser: () => {
+            dispatch(action.actSignOut());
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

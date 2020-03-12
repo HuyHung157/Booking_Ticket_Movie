@@ -12,4 +12,8 @@ export const SET_ACTIVE_LISTMOVIE = "SET_ACTIVE_LISTMOVIE";
 export const GET_SYSTEM_THEATRES = "GET_SYSTEM_THEATRES";
 export const GET_LIST_SHOWTIME_THEATRES = "GET_LIST_SHOWTIME_THEATRES";
 export const SET_DATE = "SET_DATE";
-export const SET_ACTIVE_FOR_DATE = "SET_ACTIVE_FOR_DATE"
+export const SET_ACTIVE_FOR_DATE = "SET_ACTIVE_FOR_DATE";
+//Auth
+export const SIGN_IN = "SIGN_IN";
+export const SIGN_UP = "SIGN_UP";
+export const SIGN_OUT = "SIGN_OUT";

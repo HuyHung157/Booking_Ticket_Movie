@@ -1,4 +1,10 @@
 .branch__detail__list {
+  a{
+    transition: all .5s;
+    &:hover{
+      color: $color-red-0;
+    }
+  }
     width: 90%;
     .branch__item {
       display: flex;
@@ -46,19 +52,19 @@
     }
   }
   .BHDStar{
-    color:rgb(129, 191, 64);
+    color:rgb(129, 191, 64) ;
   }
   .CGV{
-    color: rgb(231, 26, 15);
+    color: rgb(231, 26, 15) ;
   }
   .Galaxy{
-    color:rgb(241, 108, 57);
+    color:rgb(241, 108, 57) ;
   }
   .LotteCinima{
-    color:rgb(237, 28, 36);
+    color:rgb(237, 28, 36) ;
   }
   .MegaGS{
-    color:rgb(255, 214, 47);
+    color:rgb(255, 214, 47) ;
   }
   .CineStar{
     color:rgb(255, 255, 255);

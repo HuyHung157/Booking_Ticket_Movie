@@ -1,5 +1,11 @@
 .footer{
-
+    a{
+        color: $color-white-0;
+        transition: all 0.5s;
+        &:hover{
+            color: $color-red-0;
+        }
+    }
     height: 300px;
     width: 100%;
     background-color: $color-black-2;
@@ -9,16 +15,58 @@
     .footer__content{
         margin: 0 auto !important;
         width: 70%;
-        p{
-            color: $color-white-0;
+        // .footer__about{
+            
+        // }
+        .footer__partner{
+            .partner__list{
+                display: flex;
+                .partner__item{
+                    margin: 5px ;
+                    a {
+                        img{
+                            height: 30px;
+                            width: 30px;
+                        }
+                    }
+                }
+            }
+        }
+        .footer__social{
+            .social__list{
+                display: flex;
+                .social__item{
+                    margin: 0 5px;
+                }
+            }
         }
 
     }
-    .footer_copyright{
+    .footer__copyright{
         margin: 0 auto !important;
         width: 70%;
-        color: white;
+        color: $color-gray-2;
         text-align: center;
+        a{
+            .footer__brand{
+                display: inline;
+                color: $color-white-0;
+                background-color: $color-red-0;
+                transition: all .5s;  
+            }
+            .footer__brand_2{
+                background-color: transparent;
+                display: inline;
+                color: $color-white-0;
+                transition: all .5s;
+            }
+            &:hover{
+                .footer__brand, .footer__brand_2{
+                    color: $color-red-0;
+                    background-color: transparent;
+                }
+            }
+        }
     }
     .line{
         height: 1px;
