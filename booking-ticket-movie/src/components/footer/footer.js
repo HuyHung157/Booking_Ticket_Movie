@@ -4,6 +4,7 @@ export default class Footer extends Component {
     render() {
         return (
             <div className="footer">
+                <div className="footer__padding">
                 <div className="row footer__content">
                     <div className="col-lg-4 footer__about">
                         <ul className="about__list">
@@ -13,7 +14,7 @@ export default class Footer extends Component {
                             <li className="about__item"><a href="/">FAQ</a></li>
                             <li className="about__item"><a href="/">Thỏa thuận sử dụng</a></li> 
                             <li className="about__item"><a href="/">Chính sách bảo mật</a></li>
-                        </ul>img_partner
+                        </ul>
                     </div>
                     <div className="col-lg-5 footer__partner">
                         <p className="partner__titile">Đối tác: </p>
@@ -40,6 +41,7 @@ export default class Footer extends Component {
                 </div>
                 <div className="footer__copyright">
                     © Copyright 2020 <a href="/"> <p className="footer__brand">H2</p><p className="footer__brand_2">CineBox</p></a> . All rights reserved.
+                </div>
                 </div>
             </div>
         )

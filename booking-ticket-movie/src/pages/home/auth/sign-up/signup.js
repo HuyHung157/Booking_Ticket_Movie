@@ -28,22 +28,6 @@ const signUpUserSchema = Yup.object().shape({
 })
 
 class SignUp extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         taiKhoan: "",
-    //         matKhau: "",
-    //         email: "",
-    //         soDt: "",
-    //         hoTen: "",
-    //     }
-    // }
-    // handleOnChange = (e) => {
-    //     let { name, value } = e.target;
-    //     this.setState({
-    //         [name]: value
-    //     });
-    // }
 
     handleSubmit = (value) => {
         // event.preventDefault();
@@ -57,11 +41,8 @@ class SignUp extends Component {
             maNhom: "GP01",
             maLoaiNguoiDung: "KhachHang",
         };
-        // console.log(user);
         this.props.signUpUser(user, this.props.history);
     }
-
-
 
     render() {
         return (
@@ -80,6 +61,10 @@ class SignUp extends Component {
                 onSubmit={this.handleSubmit}
                 render={formikProps => (
                     <div className="page__signup">
+                        <div className="logo__control">
+                        <Link className="logo__return" to="/sign-in"><i class="fa fa-chevron-left"></i></Link>
+                        <Link className="logo__home" to="/" ><i class="fa fa-home"></i></Link>
+                        </div>
                         <img className="signup_img" src="./../img/favicon.png" alt="img_logo" />
                         <div className="signup__heading">
                             <h1 className="signup__headingText">Đăng ký</h1>
@@ -89,16 +74,16 @@ class SignUp extends Component {
                         </div>
                         <Form className="row form_signup" >
                             <Field
-                                className="col-6 input__firstName_signup"
-                                // className={'col-6 input__firstName_signup form-control' + (errors.firstName && touched.firstName ? ' is-invalid' : '')}
+                                // className="col-6 input__firstName_signup"
+                                className={'col-6 input__firstName_signup form-control' + (formikProps.errors.firstName && formikProps.touched.firstName ? ' is-invalid' : '')}
                                 type="text"
                                 name="firstName"
                                 placeholder="Họ"
                                 onChange={formikProps.handleChange}
                             />
                             <Field
-                                className="col-6 input__lastName_signup"
-                                // className={'col-6 input__lastName_signup form-control' + (errors.lastName && touched.lastName ? ' is-invalid' : '')}
+                                // className="col-6 input__lastName_signup"
+                                className={'col-6 input__lastName_signup form-control' + (formikProps.errors.lastName && formikProps.touched.lastName ? ' is-invalid' : '')}
                                 type="text"
                                 name="lastName"
                                 placeholder="Tên"
@@ -109,16 +94,16 @@ class SignUp extends Component {
                                 <ErrorMessage name="lastName" component="span" className="invalid-feedback error col-6" />
                             </div>
                             <Field
-                                className="col-6 input__phoneNumber_signup"
-                                // className={'col-6 input__phoneNumber_signup form-control' + (errors.phoneNumber && touched.phoneNumber ? ' is-invalid' : '')}
+                                // className="col-6 input__phoneNumber_signup"
+                                className={'col-6 input__phoneNumber_signup form-control' + (formikProps.errors.phoneNumber && formikProps.touched.phoneNumber ? ' is-invalid' : '')}
                                 type="number"
                                 name="phoneNumber"
                                 placeholder="Số điện thoại"
                                 onChange={formikProps.handleChange}
                             />
                             <Field
-                                className="col-6 input__password_signup"
-                                // className={'col-6 input__email_signup form-control' + (errors.email && touched.email ? ' is-invalid' : '')}
+                                // className="col-6 input__password_signup"
+                                className={'col-6 input__email_signup form-control' + (formikProps.errors.email && formikProps.touched.email ? ' is-invalid' : '')}
                                 type="email"
                                 name="email"
                                 placeholder="Email"
@@ -129,8 +114,8 @@ class SignUp extends Component {
                                 <ErrorMessage name="email" component="span" className="invalid-feedback error col-6" />
                             </div>
                             <Field
-                                // className={'col-12 input__user_signup form-control' + (errors.userName && touched.userName ? ' is-invalid' : '')}
-                                className="col-12 input__user_signup"
+                                // className="col-12 input__user_signup"
+                                className={'col-12 input__user_signup form-control' + (formikProps.errors.userName && formikProps.touched.userName ? ' is-invalid' : '')}
                                 type="text"
                                 name="userName"
                                 placeholder="Tài khoản"
@@ -138,8 +123,8 @@ class SignUp extends Component {
                             />
                             <ErrorMessage name="userName" component="span" className="invalid-feedback error col-12" />
                             <Field
-                                className="col-6 input__password_signup"
-                                // className={'col-6 input__password_signup form-control' + (errors.password && touched.password ? ' is-invalid' : '')}
+                                // className="col-6 input__password_signup"
+                                className={'col-6 input__password_signup form-control' + (formikProps.errors.password && formikProps.touched.password ? ' is-invalid' : '')}
                                 type="password"
                                 name="password"
                                 placeholder="Mật khẩu"
@@ -147,8 +132,8 @@ class SignUp extends Component {
                             />
 
                             <Field
-                                className="col-6 input__password_signup"
-                                // className={'col-6 input__confirmPassword_signup form-control' + (errors.confirmPassword && touched.confirmPassword ? ' is-invalid' : '')}
+                                // className="col-6 input__password_signup"
+                                className={'col-6 input__confirmPassword_signup form-control' + (formikProps.errors.confirmPassword && formikProps.touched.confirmPassword ? ' is-invalid' : '')}
                                 type="password"
                                 name="confirmPassword"
                                 placeholder="Xác nhận mật khẩu" s

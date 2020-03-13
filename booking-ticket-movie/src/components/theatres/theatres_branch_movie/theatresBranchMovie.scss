@@ -2,28 +2,48 @@
 	.listfilm__item_right {
 		text-align: left;
 		display: flex;
-		margin-bottom: 10px;
+		margin-bottom: 15px;
 		.listfilm__img {
 			display: block;
-			width: 80px;
-			height: 100px;
-			margin-right: 10px;
+			width: auto;
+			height: 150px;
+			margin-right: 30px;
 		}
 		.lisfilm__info_right {
 			.lisfilm__infor_title {
 				color: $color-red-0;
-				margin-bottom: 0;
+				margin-bottom: 10px;
+				font-size: 30px;
 			}
 			.lisfilm__infor_reward {
 				display: inline;
-				font-style: italic;
 				margin-right: 5px;
+				font-style: italic;
+				font-size: 17px;
 			}
 			.reward {
 				display: inline;
 				font-weight: bold;
+				font-size: 17px;
 				.icon_star {
 					color: yellow;
+				}
+			}
+			.listfilm__showtime_right {
+				margin: 20px auto;
+				a {
+					padding: 10px 15px;
+					margin-right: 10px;
+					color: $color-white-0;
+					background-color: $color-red-3;
+					border-radius: 10px;
+					font-size: 16px;
+					font-weight: bold;
+					transition: all .5s;
+					&:hover {
+						color: $color-yellow;
+						background-color: $color-red-0;						
+					}
 				}
 			}
 		}
@@ -34,27 +54,39 @@
 	}
 }
 .tlist-date {
-    display: flex;
-    // flex-wrap: wrap;
-    .tlist-date__item {
-      padding: 10px;
-      text-align: center;
-      color: white;
-      font-size: 15px;
-      border: 1px solid white;
-      border-radius: 15px;
-      margin: 7px;
-      &:hover {
-        cursor: pointer;
-        background-color: yellow;
-        border: 1px solid yellow;
-        color: black;
-      }
-    }
-    .tlist-date__item--active {
-      background-color: yellow;
-      border: 1px solid yellow;
-      color: black;
-    }
-    
-  }
+	display: flex;
+	// flex-wrap: wrap;
+	.tlist-date__item {
+		margin: 7px;
+		padding: 10px;
+		text-align: center;
+		color: $color-white-0;
+		font-size: 15px;
+		border: 1px solid $color-red-3;
+		border-radius: 15px;
+		transition: all .5s;
+		&:hover {
+			cursor: pointer;
+			background-color: $color-red-3;
+			// border: 1px solid yellow;
+			color: $color-white-0;
+		}
+		p {
+			margin: 0;
+		}
+		.tlist-date__item--day{
+			color: $color-yellow;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.tlist-date__item--month-date {
+			font-size: 16px;
+			font-style: italic;
+		}
+	}
+	.tlist-date__item--active {
+		background-color: $color-red-3;
+		//   border: 1px solid yellow;
+		color: $color-white-0;
+	}
+}

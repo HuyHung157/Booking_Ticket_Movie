@@ -7,6 +7,40 @@
 		overflow: hidden;
 		box-shadow: 0 2px 10px -3px $color-black-1;
 		text-align: center;
+		.logo__control{
+			text-align: left;
+			display: block;
+			.logo__return{
+				text-align: left;
+				i{
+					font-size: 25px;
+					color: $color-black-3;
+					background-color: $color-gray-1;
+					padding: 12px 17px 10px 12px;
+					// padding: 10px;
+					border-radius: 50%;
+					transition: all .5s;
+					&:hover{
+						color: $color-blue-0;
+					}
+				}
+			}
+			.logo__home{
+				text-align: left;
+				margin-left: 10px;
+				i{
+					font-size: 30px;
+					color: $color-black-3;
+					background-color: $color-gray-1;
+					padding: 10px;
+					border-radius: 50%;
+					transition: all .5s;
+					&:hover{
+						color: $color-red-0;
+					}
+				}
+			}
+		}
 	.signup_img {
 		display: block !important;
 		width: 80px;
@@ -84,6 +118,9 @@
 			transition: all .5s;
 			outline: none;
 			&:hover {
+				background-color: $color-blue-3 !important;
+			}
+			&:focus {
 				background-color: $color-blue-3 !important;
 			}
 		}

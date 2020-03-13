@@ -41,7 +41,8 @@ class SignIn extends Component {
                 onSubmit={this.handleSubmit}
                 render={formikProps => (
                     <div className="page__login">
-                        <Form className="form_login">
+                        <Form className=" form_login">
+                        <Link className="logo_home" to="/" ><i class="fa fa-home"></i></Link>
                             <img className="login_img" src="./../img/favicon.png" alt="img_logo" />
                             <div className="login__heading">
                                 <h1 className="login__headingText">Đăng nhập</h1>
@@ -49,10 +50,24 @@ class SignIn extends Component {
                                     Để tiếp tục với <Link to="/" className="login__headingSubtext_brand">H2Cinebox</Link>
                                 </p>
                             </div>
-                            <Field className="input__userName_login" type="text" name="userName" placeholder="Tài khoản" onChange={formikProps.handleChange} />
-                            <ErrorMessage name="userName" component="span" className="invalid-feedback error col-6" />
-                            <Field className="input__password_login" type="password" name="password" placeholder="Mật khẩu" onChange={formikProps.handleChange} />
-                            <ErrorMessage name="password" component="span" className="invalid-feedback error col-6" />
+                            <Field 
+                            // className="input__userName_login" 
+                            className={'input__userName_login form-control' + (formikProps.errors.userName && formikProps.touched.userName ? ' is-invalid' : '')}
+                            type="text" 
+                            name="userName" 
+                            placeholder="Tài khoản" 
+                            onChange={formikProps.handleChange} 
+                            />
+                            <ErrorMessage name="userName" component="span" className="invalid-feedback error " />
+                            <Field 
+                            // className="input__password_login" 
+                            className={'input__password_login form-control' + (formikProps.errors.password && formikProps.touched.password ? ' is-invalid' : '')}
+                            type="password" 
+                            name="password" 
+                            placeholder="Mật khẩu" 
+                            onChange={formikProps.handleChange} 
+                            />
+                            <ErrorMessage name="password" component="span" className="invalid-feedback error " />
                             <button className="btn__submit_login" type="submit">Sign in</button>
                             <Link className="link__create_account" to="/sign-up">Create new account</Link>
                         </Form>

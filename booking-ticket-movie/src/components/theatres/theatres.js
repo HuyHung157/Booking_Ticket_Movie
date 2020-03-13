@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import TheatresLogo from './theatres_logo/theatresLogo'
 import TheatresBranch from './theatres_branch/theatresBranch'
 import TheatresBranchMovie from './theatres_branch_movie/theatresBranchMovie'
-
 import { connect } from "react-redux";
 import * as action from '../../redux/actions'
 

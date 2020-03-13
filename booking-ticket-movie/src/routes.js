@@ -1,6 +1,6 @@
 // import React from 'react'
 import Home from './pages/home/home';
-import DetailMovie from './pages/home/detail-movie/deatail-movie';
+import DetailMovie from './pages/home/detail-movie/detail-movie';
 import Booking from './pages/home/booking-tickets/booking-tickets';
 import PageNotFound from './pages/page-not-found';
 import SignIn from './pages/home/auth/sign-in/signin';
@@ -23,7 +23,7 @@ const routesHome = [
         component: Signup
     },
     {
-        path: "/booking-tickets",
+        path: "/checkout/:tenPhim:maLichChieu",
         exact: false,
         component: Booking
     },

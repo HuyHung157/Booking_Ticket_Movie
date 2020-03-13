@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from './node_modules/react'
 
-export default class Bookingform extends Component {
+export default class BookingForm extends Component {
     render() {
         return (
             <div className="bookingform">

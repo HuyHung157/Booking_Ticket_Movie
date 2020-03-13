@@ -10,7 +10,7 @@ let initialState = {
   activeListMovie: 0,
   systemTheatresForCustom: "BHDStar",
   activeDate: "2019-01-01",
-  date: Date.parse("1/1/2019")
+  date: Date.parse("01/01/2019")
 };
 
 const theatresReducer = (state = initialState, action) => {

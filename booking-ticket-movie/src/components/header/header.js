@@ -3,7 +3,6 @@ import '../../../node_modules/font-awesome/css/font-awesome.min.css';
 import { Link } from "react-router-dom";
 import * as action from '../../redux/actions';
 import {connect} from "react-redux";
-import authReducer from '../../redux/reducers/authReducer';
 class Header extends Component {
 
     scrollToSection(id) {
@@ -42,18 +41,18 @@ class Header extends Component {
                         <div className="collapse navbar_menu navbar-collapse col-lg-9" id="navb">
                             <ul className="navbar-nav ">
                                 <li className="nav_item">
-                                    <a className="nav_link" onClick={() => this.scrollToSection("showtime")} >LỊCH CHIẾU</a>
+                                    <p className="nav_link" onClick={() => this.scrollToSection("showtime")} >LỊCH CHIẾU</p>
                                 </li>
                                 <li className="nav_item">
-                                    <a className="nav_link" onClick={() => this.scrollToSection("theatres")}>CỤM RẠP</a>
+                                    <p className="nav_link" onClick={() => this.scrollToSection("theatres")}>CỤM RẠP</p>
                                 </li>
                                 {/* Login */}
                                 {infoUser ? (
-                                    <div className="nav_item header__login--auth">
+                                    <li className="nav_item header__login--auth">
                                         <div className="header__login--wrapper">
                                             <img
                                                 className="header__avatar"
-                                                src="https://cdn11.ticketnew.com/images/profile-image.svg"
+                                                src="./img/boss.png"
                                                 alt=""
                                             />
                                             <p className="header__user">Hi, {infoUser.hoTen}</p>
@@ -77,7 +76,7 @@ class Header extends Component {
                                                 </Link>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </li>
                                 ) : (
                                         <>
                                             <li className="nav_login nav_item">

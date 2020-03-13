@@ -30,14 +30,15 @@
 				margin: 0px auto;
 				display: flex;
 				.theatres__branch {
-					width: 40%;
+					width: 35%;
 					margin-right: 10px;
 					height: 50vh;
 					overflow-y: scroll;
 				}
 				.theatres__listmovie {
-					width: 60%;
+					width: 65%;
 					overflow-y: scroll;
+					height: 50vh;
 				}
 			}
 		}

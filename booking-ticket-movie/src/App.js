@@ -2,9 +2,9 @@ import React from "react";
 import "./App.scss";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-// import Header from './components/header/header';
-
 import { routesHome } from './routes';
+// import Header from './components/header/header';
+// import Footer from "./components/footer/footer";
 // import Loader from "./pages/loader/loader";
 
 const showContentMenuHome = routesHome => {
@@ -37,6 +37,7 @@ function App() {
 
         {/* <Route path="/admin" component={Admin} /> */}
       </Switch>
+      {/* <Footer/> */}
     </BrowserRouter>
   );
 }

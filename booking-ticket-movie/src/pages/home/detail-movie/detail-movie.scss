@@ -1,0 +1,170 @@
+.detailMovie{
+    width: 100%;
+    .logo_home{
+        margin: 10px;
+        display: block;
+        text-align: left;
+        i{
+            font-size: 30px;
+            color: $color-black-3;
+            background-color: $color-white-2;
+            padding: 10px;
+            border-radius: 100%;
+            transition: all .5s;
+            &:hover{
+                color: $color-red-0;
+            }
+        }
+    }
+    .detailMovie__content{
+        color: $color-white-0 !important;
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 20px ;
+        .detailMovie__header{
+            color: $color-white-0 ;
+            .header__banner{
+                text-align: center;
+                margin: 0 auto;
+                width: 100%;
+                .overplay {
+                    position: relative;
+                    transition: all .5s;
+                    width: 100%;
+                    height: 100%;
+                    cursor: pointer;
+                    .card_img_top {
+                        height: 400px;
+                        width: auto;
+                        margin: 0 auto;
+                    }
+                    .btn_trailer {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        text-align: center;
+                        background-color: $color-black-2;
+                        height: 70px;
+                        width: 70px;
+                        line-height: 63px;
+                        border: none;
+                        border-radius: 100%;
+                        cursor: pointer;
+                        font-size: 60px;
+                        opacity: 0.25;
+                        transition: all 0.5s;
+                        i {
+                            text-align: center;
+                            color: $color-red-0;
+                            height: 60px;
+                            width: 60px;
+                        border-radius: 100% ;
+                            background-color: $color-white-2;
+                            opacity: 0.6;
+                            transition: all 0.5s;
+                        }
+                    }
+                    &:hover {
+                        .card_img_top {
+                            opacity: 0.5;
+                        }
+                        .btn_trailer{
+                            opacity: 1;
+                            i {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            .header__detail{
+                // display: flex;
+                // align-items: center;
+                color: $color-white-0;
+                .table{
+                    .row{
+                        // align-items: center;
+                        td{
+                            display: flex;
+                            align-items: center;
+                            margin: 0;
+                            padding: 0;
+                            border: none;
+                        }
+                        .table__title{
+                            color: $color-red-0;
+                            font-weight: bold;
+                            font-size: 30px;
+                            text-align: center;
+                            justify-content: center;
+                            position: relative;
+                            &::before{
+                                position: absolute;
+                                content: "";
+                                top: 0;
+                                right: 0;
+                                height: 100%;
+                                width: 2px;
+                                background-color: $color-gray-2;
+                            }
+                            // &::after{
+                            //     position: absolute;
+                            //     content: "";
+                            //     top: 0;
+                            //     left: 0;
+                            //     height: 100%;
+                            //     width: 2px;
+                            //     background-color: $color-gray-2;
+                            // }
+                        }
+                        .table__content{
+                            width: 100%;
+                            h3{
+                                font-size: 30px;
+                                color: $color-white-0;
+                                margin: 20px;
+                            }
+                            
+                            // &::before{
+                            //     position: absolute;
+                            //     content: "";
+                            //     top: 0;
+                            //     right: 0;
+                            //     height: 100%;
+                            //     width: 2px;
+                            //     background-color: $color-gray-2;
+                            // }
+                        }
+                        .table__detailContent{
+                            h3{
+                                font-size: 20px;
+                                font-style: italic;
+                                font-weight: 100;
+                            }       
+                        }
+                    }
+                    .row__title{
+                        height: 100px;
+                        position: relative;
+                        &::before{
+                            position: absolute;
+                            content: "";
+                            bottom: 0;
+                            left: 0;
+                            height: 2px;
+                            width: 100%;
+                            background-color: $color-gray-2;
+                        }
+                    }
+                }
+            }
+        }
+        .detailMovie__table{
+            margin-top: 20px;
+        }
+    }
+    .theatres{
+        width: 100%;
+    }
+}
