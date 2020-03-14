@@ -55,7 +55,6 @@ class SignUp extends Component {
                     confirmPassword: '',
                     userName: '',
                     phoneNumber: '',
-
                 }}
                 validationSchema={signUpUserSchema}
                 onSubmit={this.handleSubmit}

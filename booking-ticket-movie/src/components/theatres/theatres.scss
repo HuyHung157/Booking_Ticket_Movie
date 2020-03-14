@@ -31,14 +31,12 @@
 				display: flex;
 				.theatres__branch {
 					width: 35%;
-					margin-right: 10px;
+					// margin-right: 10px;
 					height: 50vh;
 					overflow-y: scroll;
 				}
 				.theatres__listmovie {
 					width: 65%;
-					overflow-y: scroll;
-					height: 50vh;
 				}
 			}
 		}

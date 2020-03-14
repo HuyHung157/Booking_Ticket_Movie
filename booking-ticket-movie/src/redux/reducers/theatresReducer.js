@@ -10,7 +10,8 @@ let initialState = {
   activeListMovie: 0,
   systemTheatresForCustom: "BHDStar",
   activeDate: "2019-01-01",
-  date: Date.parse("01/01/2019")
+  date: Date.parse("01/01/2019"),
+  exactly: false,
 };
 
 const theatresReducer = (state = initialState, action) => {
@@ -43,6 +44,9 @@ const theatresReducer = (state = initialState, action) => {
         return { ...state };
         case ActionType.SET_ACTIVE_FOR_DATE:
           state.activeDate = action.activeDate;
+          return { ...state };
+          case ActionType.GET_EXACTLY:
+          state.exactly = action.exactly;
           return { ...state };
     default:
       return { ...state };

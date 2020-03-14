@@ -1,5 +1,5 @@
 import * as ActionTypes from "../contants/ActionTypes";
-import { movieService, theatresServices, authServices } from "../../services";
+import { movieService, theatresServices, authServices, bookingTicketsServices } from "../../services";
 // import Axios from "axios";
 
 export const actGetListMovieCommingAPI = () => {
@@ -100,6 +100,13 @@ export const actSetActiveLogo = activeLogo => {
   }
 }
 
+export const actGetExactly = exactly => {
+  return {
+    type: ActionTypes.GET_EXACTLY,
+    exactly
+  }
+}
+
 export const actSetActiveBranch = activeBranch => {
   return {
     type: ActionTypes.SET_ACTIVE_BRANCH,
@@ -185,7 +192,7 @@ export const actSignInAPI = (user, history) => {
           localStorage.setItem("User", JSON.stringify(result.data));
           alert("Đăng nhập thành công");
           history.push("/dashboard");
-        } else if(result.data.maLoaiNguoiDung === "KhachHang"){
+        } else if (result.data.maLoaiNguoiDung === "KhachHang") {
           localStorage.setItem("User", JSON.stringify(result.data));
           alert("Đăng nhập thành công");
           history.push("/");
@@ -194,6 +201,7 @@ export const actSignInAPI = (user, history) => {
         }
       })
       .catch(err => {
+        alert("Tài khoản hoặc mật khẩu không đúng!");
         console.log(err);
       });
   };
@@ -202,23 +210,67 @@ export const actSignInAPI = (user, history) => {
 export const actSignUpAPI = (user, history) => {
   return dispatch => {
     authServices.AuthSignUp(user)
-    .then(result => {
-      alert("Đăng ký thành công");
-      history.push("/sign-in");
-      dispatch({
-        type: ActionTypes.SIGN_IN,
-        infoUser: result.data
+      .then(result => {
+        alert("Đăng ký thành công");
+        history.push("/sign-in");
+        dispatch({
+          type: ActionTypes.SIGN_IN,
+          infoUser: result.data
+        });
+      })
+      .catch(err => {
+        alert("Đăng ký không thành công");
+        console.log(err);
       });
-    })
-    .catch(err => {
-      alert("Đăng ký không thành công");
-      console.log(err);
-    });
   };
 };
 // SignOut
 export const actSignOut = () => {
   return {
     type: ActionTypes.SIGN_OUT
+  };
+};
+
+// Booking-Tickets
+export const actGetListSeatByCodeShowtimeAPI = codeShowtime => {
+  return dispatch => {
+    bookingTicketsServices.ListSeat(codeShowtime)
+      .then(result => {
+        dispatch({
+          type: ActionTypes.GET_LIST_SEAT_BY_CODE_SHOWTIME,
+          listSeat: result.data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+};
+export const actBookListSeatAPI = (data, history) => {
+  const user = JSON.parse(localStorage.getItem("User"));
+  return dispatch => {
+    bookingTicketsServices.Booking(data)
+      .then(result => {
+        history.push(`/account/${user.taiKhoan}`);
+        alert("dat thanh cong", result);
+        dispatch({
+          type: ActionTypes.BOOK_LIST_SEAT
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+};
+
+export const actSelectSeat = seat => {
+  return {
+    type: ActionTypes.SELECT_SEAT,
+    seat
+  };
+};
+export const actResetListTicket = () => {
+  return {
+    type: ActionTypes.RESET_LIST_TICKET
   };
 };

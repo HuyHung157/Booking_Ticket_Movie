@@ -1,10 +1,10 @@
 // import React from 'react'
 import Home from './pages/home/home';
 import DetailMovie from './pages/home/detail-movie/detail-movie';
-import Booking from './pages/home/booking-tickets/booking-tickets';
 import PageNotFound from './pages/page-not-found';
 import SignIn from './pages/home/auth/sign-in/signin';
 import Signup from './pages/home/auth/sign-up/signup';
+import BookingTicket from './pages/home/booking-tickets/booking-tickets';
 
 const routesHome = [
     {
@@ -23,9 +23,9 @@ const routesHome = [
         component: Signup
     },
     {
-        path: "/checkout/:tenPhim:maLichChieu",
+        path: "/checkout/:tenPhim/:maLichChieu",
         exact: false,
-        component: Booking
+        component: BookingTicket
     },
     {
         path: "/detail-movie/:id",

@@ -1,92 +1,132 @@
-.film__list {
-	.listfilm__item_right {
-		text-align: left;
+.listMovie__showtime{
+	position: relative;
+	margin-left: 10px;
+	.tlist-date {
+		position: absolute;
+		top: 0;
+		left: 0;
 		display: flex;
-		margin-bottom: 15px;
-		.listfilm__img {
-			display: block;
-			width: auto;
-			height: 150px;
-			margin-right: 30px;
-		}
-		.lisfilm__info_right {
-			.lisfilm__infor_title {
-				color: $color-red-0;
-				margin-bottom: 10px;
-				font-size: 30px;
+		width: 98.7%;
+		margin: 0 auto;
+		background-color: $color-black-1 !important;
+		// flex-wrap: wrap;
+		.tlist-date__item {
+			margin: 5px auto;
+			padding: 10px 13px;
+			text-align: center;
+			color: $color-white-0;
+			font-size: 15px;
+			border: 1px solid $color-red-3;
+			border-radius: 15px;
+			transition: all .5s;
+			&:hover {
+				cursor: pointer;
+				background-color: $color-red-3;
+				// border: 1px solid yellow;
+				color: $color-white-0;
 			}
-			.lisfilm__infor_reward {
-				display: inline;
-				margin-right: 5px;
-				font-style: italic;
-				font-size: 17px;
+			p {
+				margin: 0;
 			}
-			.reward {
-				display: inline;
+			.tlist-date__item--day{
+				color: $color-yellow;
+				font-size: 16px;
 				font-weight: bold;
-				font-size: 17px;
-				.icon_star {
-					color: yellow;
-				}
 			}
-			.listfilm__showtime_right {
-				margin: 20px auto;
-				a {
-					padding: 10px 15px;
-					margin-right: 10px;
-					color: $color-white-0;
-					background-color: $color-red-3;
-					border-radius: 10px;
-					font-size: 16px;
-					font-weight: bold;
-					transition: all .5s;
-					&:hover {
-						color: $color-yellow;
-						background-color: $color-red-0;						
+			.tlist-date__item--month-date {
+				font-size: 16px;
+				font-style: italic;
+			}
+		}
+		.tlist-date__item--active {
+			background-color: $color-red-3;
+			//   border: 1px solid yellow;
+			color: $color-white-0;
+		}
+	}
+
+	.film__list {
+		margin-left: 5px;
+		padding-top: 100px;
+		overflow-y: scroll;
+		height: 50vh;
+		.listfilm__item{
+			// padding: 5px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+			width: 98%;
+			margin-bottom: 15px;
+			margin-right: 10px;
+			margin-left: 10px;
+		}
+		.listfilm__item_right {
+			display: flex;
+			text-align: left;
+			.listfilm__img {
+				display: block;
+				width: auto;
+				height: 150px;
+				margin-right: 30px;
+			}
+			.lisfilm__info_right {
+				.lisfilm__infor_title {
+					margin-top: 10px;
+					margin-bottom: 5px;
+					color: $color-red-0;
+					font-size: 30px;
+				}
+				.group__reward{
+					margin-bottom: 25px;
+					.lisfilm__infor_reward {
+						display: inline;
+						margin-right: 5px;
+						font-style: italic;
+						font-size: 17px;
+					}
+					.reward {
+						display: inline;
+						font-weight: bold;
+						font-size: 17px;
+						.icon_star {
+							color: yellow;
+						}
+					}
+				}
+				.listfilm__showtime_right {
+					margin: 20px auto;
+					a {	
+						padding: 10px 15px;
+						margin-right: 10px;
+						color: $color-white-0;
+						background-color: $color-red-3;
+						border-radius: 10px;
+						font-size: 16px;
+						font-weight: bold;
+						transition: all .5s;
+						&:hover {
+							color: $color-yellow;
+							background-color: $color-red-0;						
+						}
 					}
 				}
 			}
 		}
-	}
-	.icon_wrong {
-		height: 100px;
-		width: auto;
-	}
-}
-.tlist-date {
-	display: flex;
-	// flex-wrap: wrap;
-	.tlist-date__item {
-		margin: 7px;
-		padding: 10px;
-		text-align: center;
-		color: $color-white-0;
-		font-size: 15px;
-		border: 1px solid $color-red-3;
-		border-radius: 15px;
-		transition: all .5s;
-		&:hover {
-			cursor: pointer;
-			background-color: $color-red-3;
-			// border: 1px solid yellow;
-			color: $color-white-0;
+		.lisfilm__info_wrong{
+			padding: 10px;
+			h3{
+				font-weight: bold;
+			}
+			p{
+				margin: 5px;
+				
+			}
+			.sorry{
+				font-style: italic;
+				font-size: 20px;
+			}
+			.icon_wrong {
+				height: 100px;
+				width: auto;
+			}
 		}
-		p {
-			margin: 0;
-		}
-		.tlist-date__item--day{
-			color: $color-yellow;
-			font-size: 16px;
-			font-weight: bold;
-		}
-		.tlist-date__item--month-date {
-			font-size: 16px;
-			font-style: italic;
-		}
-	}
-	.tlist-date__item--active {
-		background-color: $color-red-3;
-		//   border: 1px solid yellow;
-		color: $color-white-0;
 	}
 }

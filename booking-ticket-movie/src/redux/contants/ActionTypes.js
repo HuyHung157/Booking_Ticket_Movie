@@ -13,7 +13,14 @@ export const GET_SYSTEM_THEATRES = "GET_SYSTEM_THEATRES";
 export const GET_LIST_SHOWTIME_THEATRES = "GET_LIST_SHOWTIME_THEATRES";
 export const SET_DATE = "SET_DATE";
 export const SET_ACTIVE_FOR_DATE = "SET_ACTIVE_FOR_DATE";
+export const GET_EXACTLY = "GET_EXACTLY";
 //Auth
 export const SIGN_IN = "SIGN_IN";
 export const SIGN_UP = "SIGN_UP";
 export const SIGN_OUT = "SIGN_OUT";
+// Booking Tickets
+// seat
+export const GET_LIST_SEAT_BY_CODE_SHOWTIME = "GET_LIST_SEAT_BY_CODE_SHOWTIME";
+export const SELECT_SEAT = "SELECT_SEAT";
+export const BOOK_LIST_SEAT = "BOOK_LIST_SEAT";
+export const RESET_LIST_TICKET = "RESET_LIST_TICKET";

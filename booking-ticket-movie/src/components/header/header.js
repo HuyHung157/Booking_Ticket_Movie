@@ -2,18 +2,20 @@ import React, { Component } from 'react';
 import '../../../node_modules/font-awesome/css/font-awesome.min.css';
 import { Link } from "react-router-dom";
 import * as action from '../../redux/actions';
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 class Header extends Component {
 
     scrollToSection(id) {
         switch (id) {
             case "theatres":
-                var elmnt = document.getElementById("theatres");
-                elmnt.scrollIntoView();
+                var theatres = document.getElementById("theatres");
+                theatres.scrollIntoView();
                 break;
             case "showtime":
-                var elmnt = document.getElementById("showtime");
-                elmnt.scrollIntoView();
+                var showtime = document.getElementById("showtime");
+                showtime.scrollIntoView();
+                break;
+            default:
                 break;
         } // Top
     }
@@ -68,7 +70,7 @@ class Header extends Component {
                                             </li>
                                             <li>
                                                 <Link
-                                                    onClick={()=>this.handleSignOut}
+                                                    onClick={this.handleSignOut}
                                                     className="nav-link"
                                                     to="/sign-in"
                                                 >
