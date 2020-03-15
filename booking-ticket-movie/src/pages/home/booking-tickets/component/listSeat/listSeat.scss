@@ -1,0 +1,211 @@
+.bookSeat {
+	background-color: $color-black-1;
+	padding: 10px;
+	.bookSeat__wrapper {
+		h2 {
+			background: -webkit-linear-gradient($color-red-0, orange);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			text-align: center;
+			font-size: 3.5rem;
+			margin-bottom: 30px;
+		}
+	}
+}
+// select
+
+.bookSeat__select {
+	width: 100%;
+	padding: 5px 0px;
+	div.bookSeat__screen {
+		margin: 30px auto;
+		margin-top: 10px;
+		padding-top: 5px;
+		text-align: center;
+		.screen {
+			margin: 0 auto;
+			// background-color: $color-black-0;
+			width: 45%;
+			// height: 8px;
+			border-top: 10px solid rgb(26, 26, 26);
+			border-radius: 45%;
+			box-shadow: 0 35px 50px 0 rgba(151, 151, 151, 0.3), 0 5px 30px 0 rgba(180, 180, 180, 0.4);
+		}
+		.text {
+			font-size: 28px;
+			color: $color-white-2;
+		}
+	}
+	.bookSeat__table {
+		width: 400px;
+		margin: 0px auto;
+		margin-bottom: 20px;
+		margin-left: 11%;
+		tbody {
+			tr {
+				margin: 20px;
+				td {
+					padding: 3px;
+					.bookSeat__select--col {
+						border: 1px solid $color-white-2;
+						border-radius: 5px;
+						width: 35px;
+						height: 35px;
+						line-height: 30px;
+						font-size: 1.2rem;
+						color: $color-white-2;
+						&:hover {
+							cursor: unset;
+							background: none;
+							color: $color-white-2;
+						}
+					}
+					div {
+						border: 1px solid $color-yellow-3;
+						border-radius: 6px;
+						margin: 5px;
+						// padding: 5px;
+						width: 35px;
+						height: 35px;
+						line-height: 32px;
+						color: $color-white-1;
+						text-align: center;
+						font-size: 1rem;
+						opacity: 0.8;
+						transition: all .5s;
+						&:hover {
+							opacity: 1;
+							cursor: pointer;
+							background-color: $color-yellow-3;
+							font-size: 1.1rem;
+							font-weight: bold;
+							color: $color-black-0;
+						}
+					}
+					.bookSeat__select--vip {
+						border: 2px solid $color-yellow;
+						color: $color-gray-2;
+						transition: all .5s;
+						&:hover {
+							background-color: $color-yellow;
+							color: $color-black-0;
+						}
+					}
+					.bookSeat__select--selected {
+						background-color: $color-black-2;
+						opacity: 0.5;
+						color: $color-black-2;
+						border: none;
+						width: 35px;
+						height: 35px;
+						line-height: 35px;
+						// font-weight: bold;
+						&:hover {
+							opacity: 0.5;
+							background-color: $color-black-2;
+							color: $color-black-2;
+							font-size: 1rem;
+							cursor: unset;
+							font-weight: normal;
+						}
+					}
+					.bookSeat__select--yourSeat {
+						background-color: $color-red-0;
+						color: $color-yellow;
+						font-weight: bold;
+						border: none;
+						line-height: 35px;
+						font-size: 1.2rem;
+						width: 35px;
+						height: 35px;
+						line-height: 35px;
+					}
+					.bookSeat__select--space {
+						border: none;
+						&:hover {
+							cursor: unset;
+							background: none;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	//   @include Responsive(MD) {
+	//     overflow-x: scroll;
+	//   }
+}
+.bookSeat__guide {
+	display: flex;
+	flex-wrap: wrap;
+	width: 65%;
+	margin: 0 auto;
+	margin-top: 25px;
+	// border: 2px solid $color-red-0;
+	border-radius: 5px;
+    justify-content: space-between;
+    
+    position: relative;
+    background: linear-gradient(to right,red, orange);
+    padding: 2px;
+	.bookSeat__guide_items {
+        display: flex;
+        width: 100%;
+        border-radius: 5px;
+		background: $color-black-1;
+		color: $color-white-0;
+        padding: 2rem;
+        margin: 0 auto;
+		.bookSeat__guide_item {
+			z-index: 1;
+			margin: 10px;
+			p {
+				display: flex;
+				margin: 0;
+				align-items: center;
+				.bookSeat__box {
+					margin: 5px;
+				}
+				.bookSeat__available {
+					display: inline-block;
+					width: 30px;
+					height: 30px;
+					border: 1px solid $color-yellow-3;
+					opacity: 0.8;
+					border-radius: 6px;
+				}
+				.bookSeat__available--vip {
+					display: inline-block;
+					width: 30px;
+					height: 30px;
+					border: 2px solid $color-yellow;
+					border-radius: 6px;
+				}
+				.bookSeat__selected {
+					display: inline-block;
+					width: 30px;
+					height: 30px;
+					border-radius: 6px;
+					background-color: $color-black-0;
+					opacity: 0.5;
+				}
+				.bookSeat__yourSeat {
+					display: inline-block;
+					width: 30px;
+					height: 30px;
+					border-radius: 6px;
+					background-color: $color-red-0;
+				}
+				.bookSeat__text {
+					padding-left: 5px;
+					color: $color-white-2;
+					font-size: 1.5rem;
+				}
+			}
+		}
+	}
+	//   @include Responsive(SM) {
+	//     width: 250px;
+	//   }
+}

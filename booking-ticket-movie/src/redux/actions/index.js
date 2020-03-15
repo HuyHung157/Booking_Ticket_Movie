@@ -189,13 +189,23 @@ export const actSignInAPI = (user, history) => {
       .then(result => {
         console.log(result.data);
         if (result.data.maLoaiNguoiDung === "QuanTri") {
+          
           localStorage.setItem("User", JSON.stringify(result.data));
           alert("Đăng nhập thành công");
           history.push("/dashboard");
+          dispatch({
+            type: ActionTypes.SIGN_IN,
+            infoUser: result.data
+          })
         } else if (result.data.maLoaiNguoiDung === "KhachHang") {
           localStorage.setItem("User", JSON.stringify(result.data));
           alert("Đăng nhập thành công");
           history.push("/");
+          dispatch({
+            type: ActionTypes.SIGN_IN,
+            infoUser: result.data
+          })
+
         } else {
           alert("Tài khoản hoặc mật khẩu không đúng!");
         }
@@ -250,16 +260,16 @@ export const actBookListSeatAPI = (data, history) => {
   const user = JSON.parse(localStorage.getItem("User"));
   return dispatch => {
     bookingTicketsServices.Booking(data)
-      .then(result => {
-        history.push(`/account/${user.taiKhoan}`);
-        alert("dat thanh cong", result);
-        dispatch({
-          type: ActionTypes.BOOK_LIST_SEAT
-        });
-      })
-      .catch(err => {
-        console.log(err);
+    .then(result => {
+      history.push(`/account/${user.taiKhoan}`);
+      alert("Đặt vé thành công", result);
+      dispatch({
+        type: ActionTypes.BOOK_LIST_SEAT
       });
+    })
+    .catch(err => {
+      console.log(err);
+    });
   };
 };
 

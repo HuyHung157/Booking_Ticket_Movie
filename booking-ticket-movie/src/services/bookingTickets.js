@@ -2,7 +2,9 @@ import Axios from 'axios';
 import * as API from './config';
 
 const user = JSON.parse(localStorage.getItem("User"));
+console.log(user)
 class BookingTicketsServices {
+
     Booking(data) {
         return Axios({
             method: "POST",

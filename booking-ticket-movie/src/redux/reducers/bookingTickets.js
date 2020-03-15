@@ -33,7 +33,9 @@ const bookingTicketsReducer = (state = initialState, action) => {
           }
         });
       }
+
       state.listTicket = _listTicket;
+
       return { ...state };
     case ActionTypes.BOOK_LIST_SEAT:
       return { ...state, listTicket: [] };
