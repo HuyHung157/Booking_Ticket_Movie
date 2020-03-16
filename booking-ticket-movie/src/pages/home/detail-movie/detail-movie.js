@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import { actGetDetailMovie } from '../../../redux/actions'
+import * as actions from '../../../redux/actions'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 // import * as action from '../../../redux/actions';
 import Modal from 'react-responsive-modal';
-import Theatres from '../../../components/theatres/theatres';
+// import Theatres from '../../../components/theatres/theatres';
 import Footer from '../../../components/footer/footer';
+import DetailMovieTheatres from './detailMovie-Theatres/detailMovie-Theatres';
 
 
 // import Loader from '../../loader/loader';
-
 
 class DetailMovie extends Component {
     state = {
@@ -28,6 +28,9 @@ class DetailMovie extends Component {
         const id = this.props.match.params.id;
         //this.props.match.params.id là đương dẫn url lấy detail movie
         this.props.getDetailMovie(id);
+        // const codeMovie = this.props.match.params.id;
+        console.log(id)
+        this.props.getListShowtimesAndInfoByCodeMovie(id);
     }
 
     renderTable = () => {
@@ -51,6 +54,8 @@ class DetailMovie extends Component {
     }
 
     render() {
+        // const { heThongRapChieu } = this.props.listShowtimesAndInfo;
+        console.log(this.props);
         let { movie } = this.props;
         const { open } = this.state;
         return (
@@ -81,7 +86,9 @@ class DetailMovie extends Component {
                                 <tbody>
                                     <tr className="row row__title">
                                         <td className="col-3 table__title " >Tên phim</td>
-                                        <td className="col-9 table__content table__titleMovie"><h3>{movie.tenPhim}</h3></td>
+                                        <td className="col-9 table__content table__titleMovie"><h3><div className="theatres__title">
+                                        {movie.tenPhim}
+                                        </div></h3></td>
                                     </tr>
                                     <tr className="row">
                                         <td className="col-3 table__title table__detailTitle">Mô tả</td>
@@ -91,8 +98,18 @@ class DetailMovie extends Component {
                             </table>
                         </div>
                     </div>
-                    <Theatres />
-                    <div className="row detailMovie__table">
+                    <div className="theatres__detailMovie">
+                        <div className="theatres__title">
+                            <h2>
+                                Danh Sách Rạp Chiếu Phim {movie.tenPhim}
+                            </h2>
+                        </div>
+                        <div className="theatres__content">
+                            {/* <Theatres /> */}
+                            <DetailMovieTheatres />
+                        </div>
+                    </div>
+                    {/* <div className="row detailMovie__table">
                         <div className="col-sm-12">
                             <table className="table">
                                 <thead>
@@ -107,9 +124,9 @@ class DetailMovie extends Component {
                                 <tbody>{this.renderTable()}</tbody>
                             </table>
                         </div>
-                    </div>
+                    </div> */}
+                    <Footer />
                 </div>
-                <Footer/>
             </div>
         )
     }
@@ -124,8 +141,11 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         getDetailMovie: id => {
-            dispatch(actGetDetailMovie(id));
+            dispatch(actions.actGetDetailMovie(id));
         },
+        getListShowtimesAndInfoByCodeMovie: codeMovie => {
+            dispatch(actions.actGetListShowtimeTheatresAPI(codeMovie));
+        }
     };
 };
 

@@ -1,0 +1,18 @@
+@import "./Account/account.scss";
+@import "./Movie/movie.scss";
+@import "./Theatres/theatres.scss";
+
+.admin__page {
+    color: white;
+	.admin__content {
+        padding-top: 20px;
+		h1.admin__welcome {
+			background: -webkit-linear-gradient($color-red-0, orange);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			text-align: center;
+			font-size: 4rem;
+			margin-bottom: 30px;
+		}
+	}
+}

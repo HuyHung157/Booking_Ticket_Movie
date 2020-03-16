@@ -1,20 +1,8 @@
 import React, { Component } from 'react';
-import * as actions from "../../../../../redux/actions";
-import { connect } from "react-redux";
+// import * as actions from "../../../../../redux/actions";
+// import { connect } from "react-redux";
 
-class PayTicket extends Component {
-    renderListseat = () => {
-        const { listTicket } = this.props;
-        if (listTicket && listTicket.length > 0) {
-            return listTicket.map((seat, index) => {
-                return (
-                    <p key={index} className="bill__info__item">
-                        {seat.tenGhe}
-                    </p>
-                );
-            });
-        }
-    };
+export default class PayTicket extends Component {
 
     handleClickBookNow = () => {
         const { bookListSeat, infoMovie, listTicket } = this.props;
@@ -36,6 +24,70 @@ class PayTicket extends Component {
             this.props.history.push("/sign-in");
         }
     };
+
+    renderListseat = () => {
+        const { listTicket } = this.props;
+        if (listTicket && listTicket.length > 0) {
+            return listTicket.map((seat, index) => {
+                return (
+                    <div key={index} className="bill__info__item">
+                        {/* {seat.tenGhe} */}
+                        <p>{this.renderAlphabetYourSeat(seat.tenGhe)}</p>
+                        <p>{this.renderNumberYourSeat(seat.tenGhe)}</p>
+                    </div>
+
+                );
+            });
+        }
+    };
+
+    renderNumberYourSeat = (tenGhe) => {
+        let yourSeat = parseInt(tenGhe % 16);
+        if (yourSeat === 0) {
+            return yourSeat = 16;
+        } else {
+            return yourSeat
+        }
+    }
+
+    renderAlphabetYourSeat = (tenGhe) => {
+        let yourSeat = parseInt(tenGhe);
+        let tam = 0;
+        let result;
+        for (var i = 10; i > 0; i--) {
+            tam = (i * 16);
+            tam %= yourSeat;
+            if (tam < 16) {
+                result = i;
+            }
+        }
+        switch (result) {
+            case 1:
+                return "A";
+            case 2:
+                return "B";
+            case 3:
+                return "C";
+            case 4:
+                return "D";
+            case 5:
+                return "E";
+            case 6:
+                return "F";
+            case 7:
+                return "G";
+            case 8:
+                return "H";
+            case 9:
+                return "I";
+            case 10:
+                return "J";
+            default:
+                return "..."
+        }
+
+    }
+
     renderPrice = () => {
         let result = 0;
         this.props.listTicket.forEach(ticket => {
@@ -43,7 +95,6 @@ class PayTicket extends Component {
         });
         return result.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");;
     };
-
 
     render() {
         const { listTicket } = this.props;
@@ -87,18 +138,18 @@ class PayTicket extends Component {
 
     }
 }
-const mapStateToProps = state => {
-    return {
-        listTicket: state.bookingTicketsReducer.listTicket
-    };
-};
+// const mapStateToProps = state => {
+//     return {
+//         listTicket: state.bookingTicketsReducer.listTicket
+//     };
+// };
 
-const mapDispatchToProps = dispatch => {
-    return {
-        bookListSeat: (data, history) => {
-            dispatch(actions.actBookListSeatAPI(data, history));
-        }
-    };
-};
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         bookListSeat: (data, history) => {
+//             dispatch(actions.actBookListSeatAPI(data, history));
+//         }
+//     };
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PayTicket);
+// export default connect(mapStateToProps, mapDispatchToProps)(PayTicket);

@@ -17,11 +17,12 @@
 						font-size: 25px;
 						transition: font-size .5s;
 					}
-						// .PrivateTabIndicator-colorPrimary-55 {
-						// 	background-color: $color-red-0;
-					.MuiTabs-indicator{
+					// .PrivateTabIndicator-colorPrimary-55 {
+					// 	background-color: $color-red-0;
+					.MuiTabs-indicator {
 						background-color: transparent;
 					}
+					
 				}
 				.MuiTab-textColorPrimary {
 					outline: none;
@@ -29,7 +30,7 @@
 					color: $color-white-2;
 					&:hover {
 						color: $color-red-1;
-						.MuiTab-wrapper{
+						.MuiTab-wrapper {
 							font-size: 30px;
 						}
 					}
@@ -42,5 +43,8 @@
 				box-shadow: none;
 			}
 		}
+	}
+	ul.slick-dots {
+		display: none !important;
 	}
 }

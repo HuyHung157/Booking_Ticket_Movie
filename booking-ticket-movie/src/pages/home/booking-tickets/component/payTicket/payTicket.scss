@@ -42,7 +42,11 @@
 							color: $color-red-0;
 							font-weight: bold;
 							background-color: $color-orange-0;
-							font-size: 20px;
+                            font-size: 20px;
+                            p{
+                                display: inline;
+                                margin: 0 1px;
+                            }
 						}
 					}
 				}
@@ -82,8 +86,8 @@
 		margin: 10px auto;
 		text-align: center;
 		width: 95%;
-		transform-style: perserve-3d;
-		perspecive: 800px;
+		// transform-style: perserve-3d;
+		// perspecive: 800px;
 		.bg-gradient3 span,
 		.bg-gradient3:before {
 			@include gradientBg($color-red-0, $color-orange-0);

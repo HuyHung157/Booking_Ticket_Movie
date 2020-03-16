@@ -21,7 +21,7 @@ class SignIn extends Component {
             taiKhoan: value.userName,
             matKhau: value.password
         };
-        // console.log(user);
+    
         this.props.signInUser(user, this.props.history);
     }
     render() {

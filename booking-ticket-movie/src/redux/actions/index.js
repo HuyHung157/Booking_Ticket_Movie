@@ -187,9 +187,8 @@ export const actSignInAPI = (user, history) => {
   return dispatch => {
     authServices.AuthSignIn(user)
       .then(result => {
-        console.log(result.data);
+        // console.log(result.data);
         if (result.data.maLoaiNguoiDung === "QuanTri") {
-          
           localStorage.setItem("User", JSON.stringify(result.data));
           alert("Đăng nhập thành công");
           history.push("/dashboard");
@@ -205,7 +204,6 @@ export const actSignInAPI = (user, history) => {
             type: ActionTypes.SIGN_IN,
             infoUser: result.data
           })
-
         } else {
           alert("Tài khoản hoặc mật khẩu không đúng!");
         }
@@ -282,5 +280,19 @@ export const actSelectSeat = seat => {
 export const actResetListTicket = () => {
   return {
     type: ActionTypes.RESET_LIST_TICKET
+  };
+};
+
+// Page DetailMovie
+export const actSetDateForDetailMovie = date => {
+  return {
+    type: ActionTypes.SET_DATE_FOR_DETAIL_MOVIE,
+    date
+  };
+};
+export const actsetActiveDMLogo = numberActiveDMLogo => {
+  return {
+    type: ActionTypes.SET_ACTIVE_FOR_DMLOGO,
+    numberActiveDMLogo
   };
 };

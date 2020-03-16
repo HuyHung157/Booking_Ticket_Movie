@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import DetailMovieSelected from "./component/detailMovieSelected/detailMovieSelected";
-import ListSeat from "./component/listSeat/listSeat";
-import PayTicket from "./component/payTicket/payTicket";
+import ListSeat from "./component/listSeat";
+import PayTicket from "./component/payTicket";
 import { Link } from "react-router-dom";
 
 export default class BookingTickets extends Component {

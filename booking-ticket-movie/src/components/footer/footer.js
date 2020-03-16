@@ -33,7 +33,7 @@ class Footer extends Component {
                             />
                         </a>
                     </>
-                )               
+                )
             case "CineStar":
                 return (
                     <>
@@ -120,35 +120,39 @@ class Footer extends Component {
                             </ul>
                         </div>
                         <div className="col-lg-6 footer__partner">
-                            <p className="partner__titile">Đối tác</p>
-                            <ul className="partner__list">
-                                {this.renderListLogo()}
-                            </ul>
+                            <div className="partner__content">
+                                <p className="partner__titile">Đối tác</p>
+                                <ul className="partner__list">
+                                    {this.renderListLogo()}
+                                </ul>
+                            </div>
                         </div>
                         <div className="col-lg-3 footer__social">
-                            <p className="social__titile">App/Mobile</p>
-                            <ul className="social__list">
-                                <li className="social__item">
-                                    <a href="/">
-                                        <i className="fab fa-apple"></i>
-                                    </a>
-                                </li>
-                                <li className="social__item">
-                                    <a href="/">
-                                        <i className="fab fa-android"></i>
-                                    </a>
-                                </li>
-                                <li className="social__item">
-                                    <a href="/">
-                                        <i className="fab fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li className="social__item">
-                                    <a href="/">
-                                        <i className="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                            <div className="social__content">
+                                <p className="social__titile">Social</p>
+                                <ul className="social__list">
+                                    <li className="social__item">
+                                        <a href="/">
+                                            <i className="fab fa-apple"></i>
+                                        </a>
+                                    </li>
+                                    <li className="social__item">
+                                        <a href="/">
+                                            <i className="fab fa-android"></i>
+                                        </a>
+                                    </li>
+                                    <li className="social__item">
+                                        <a href="/">
+                                            <i className="fab fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li className="social__item">
+                                        <a href="/">
+                                            <i className="fab fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div className="footer__copyright">

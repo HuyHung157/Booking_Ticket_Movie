@@ -7,13 +7,37 @@ import * as action from '../../redux/actions'
 
 class Theatres extends Component {
   componentDidMount() {
-    const {getListShowTimeMoviesAndInfor, getListLogo, getDetailsTheatres} = this.props;
+    const { getListShowTimeMoviesAndInfor, getListLogo, getDetailsTheatres } = this.props;
     getListLogo();
     getDetailsTheatres();
     getListShowTimeMoviesAndInfor();
   }
+
+  componentWillUpdate(){
+    const { getListShowTimeMoviesAndInfor, getListLogo, getDetailsTheatres } = this.props;
+    getListLogo();
+    getDetailsTheatres();
+    getListShowTimeMoviesAndInfor();
+  }
+
+  // renderTheatresBranchMove = () => {
+  //   const {listShowtimeTheatres} = this.props;
+  //   if(listShowtimeTheatres ){
+  //     let lstCumRapABC = listShowtimeTheatres.lstCumRap;
+  //   if(lstCumRapABC && lstCumRapABC.length > 0){
+  //     return(
+  //       <TheatresBranchMovie
+  //       listMovie={lstCumRapABC}
+  //     />
+  //     )
+  //   }
+  //   }
+  // }
+
   render() {
-    let { listSystemTheatres, listBranchTheatres, systemTheatresForCustom, listShowtimeTheatres} = this.props;
+    const { listSystemTheatres, listBranchTheatres, systemTheatresForCustom, listShowtimeTheatres } = this.props;
+    // console.log(listShowtimeTheatres);
+    // let lstCumRap = listShowtimeTheatres.lstCumRap;
     return (
       <div className="theatres" id="theatres">
         <div className="theatres__padding" >
@@ -29,9 +53,10 @@ class Theatres extends Component {
                 />
               </div>
               <div className="theatres__listmovie">
-                <TheatresBranchMovie 
+                <TheatresBranchMovie
                   listMovie={listShowtimeTheatres.lstCumRap}
                 />
+                {/* {this.renderTheatresBranchMove()} */}
               </div>
             </div>
           </div>

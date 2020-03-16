@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import * as actions from "../../../../../redux/actions";
 
- class ListSeat extends Component {
+export default class ListSeat extends Component {
 
     handleClickSeat = seat => {
         const { selectSeat } = this.props;
@@ -131,19 +129,3 @@ import * as actions from "../../../../../redux/actions";
         );
     }
 }
-
-const mapStateToProps = (state) => {
-    return {
-        listTicket: state.bookingTicketsReducer.listTicket
-    };
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        selectSeat: seat => {
-            dispatch(actions.actSelectSeat(seat));
-        }
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ListSeat);
