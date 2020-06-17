@@ -52,10 +52,10 @@ class TheatresBranchMovie extends Component {
                 // console.log(`${dater}, ${datem}`);
                 // console.log(`${monthr}, ${monthm}`);
                 // console.log(`${yearf}, ${yearm}`);
-                if(datem === dater){
+                if (datem === dater) {
                     return true
                 }
-                else{
+                else {
                     return exactly;
                 }
                 // return datem === dater;
@@ -81,7 +81,7 @@ class TheatresBranchMovie extends Component {
     };
 
     renderListMovie() {
-        let { listMovie, listBranch, activeBranch, allListMovie, exactly} = this.props;
+        let { listMovie, listBranch, activeBranch, allListMovie, exactly } = this.props;
         // let exactly = false;
         if (listBranch && listBranch.length > 0) {
             if (listMovie && listMovie.length > 0) {
@@ -100,7 +100,7 @@ class TheatresBranchMovie extends Component {
                                                 <div className="lisfilm__info_right">
                                                     <h3 className="lisfilm__infor_title">{movie.tenPhim}</h3>
                                                     <div className="group__reward"><p className="lisfilm__infor_reward">Đánh giá: </p>
-                                                    <p className="reward">{allListMovie[j].danhGia} <i className="icon_star fa fa-star"></i></p></div>
+                                                        <p className="reward">{allListMovie[j].danhGia} <i className="icon_star fa fa-star"></i></p></div>
                                                     <div className="listfilm__showtime_right">
                                                         {this.renderShowTimeByMovie(movie.lstLichChieuTheoPhim, movie.tenPhim)}
                                                     </div>
@@ -119,17 +119,17 @@ class TheatresBranchMovie extends Component {
                 }
             }
         }
-                        if (exactly === false) {
-                            return (
-                                <div className="listfilm__item lisfilm__info_wrong">
-                                    <h3>Hiện chi nhánh này đã hết suất chiếu trong ngày hôm nay</h3>
-                                    <img className="icon_wrong" src="/img/sad_icon.png" alt="sad" />
-                                    <p className="sorry">Xin lỗi vì những bất tiện này</p>
-                                    <p>Quý khách có thể đến chi nhánh khác để có thể đặt vé</p>
-                                </div>
-                            );
-                        }
-                        // console.log(exactly);
+        if (exactly === false) {
+            return (
+                <div className="listfilm__item lisfilm__info_wrong">
+                    <h3>Hiện chi nhánh này đã hết suất chiếu trong ngày hôm nay</h3>
+                    <img className="icon_wrong" src="/img/sad_icon.png" alt="sad" />
+                    <p className="sorry">Xin lỗi vì những bất tiện này</p>
+                    <p>Quý khách có thể đến chi nhánh khác để có thể đặt vé</p>
+                </div>
+            );
+        }
+        // console.log(exactly);
     }
 
 

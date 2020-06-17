@@ -17,7 +17,7 @@ export default class BookingTickets extends Component {
         return (
             <>
                 <div className="row bookingTickets">
-                <Link className="logo__home" to="/" ><i class="fa fa-home"></i></Link>
+                <Link className="logo__home" to="/" ><i className="fa fa-home"></i></Link>
                     <div className="col-9 listSeat">
                         <ListSeat
                             // listTicket={listTicket}

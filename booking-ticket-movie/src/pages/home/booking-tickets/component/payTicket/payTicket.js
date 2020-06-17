@@ -130,7 +130,7 @@ export default class PayTicket extends Component {
                     </div>
                     <div className="bill__submit">
                         {/* <button onClick={this.handleClickBookNow}>Book Now</button> */}
-                        <a href="#" class="fancy-button pop-onhover bg-gradient3" onClick={this.handleClickBookNow}><span>Đặt Vé</span></a>
+                        <a href="#" className="fancy-button pop-onhover bg-gradient3" onClick={this.handleClickBookNow}><span>Đặt Vé</span></a>
                     </div>
                 </div>
             </>

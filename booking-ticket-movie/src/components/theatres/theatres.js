@@ -13,26 +13,23 @@ class Theatres extends Component {
     getListShowTimeMoviesAndInfor();
   }
 
-  componentWillUpdate(){
-    const { getListShowTimeMoviesAndInfor, getListLogo, getDetailsTheatres } = this.props;
-    getListLogo();
-    getDetailsTheatres();
-    getListShowTimeMoviesAndInfor();
+  renderTheatresBranchMove = () => {
+    const { listShowtimeTheatres, getListShowTimeMoviesAndInfor, getListLogo, getDetailsTheatres } = this.props;
+    if (listShowtimeTheatres) {
+      let lstCumRapABC = listShowtimeTheatres.lstCumRap;
+      if (lstCumRapABC && lstCumRapABC.length > 0) {
+        return (
+          <TheatresBranchMovie
+            listMovie={lstCumRapABC}
+          />
+        )
+      }
+    } else {
+      getListLogo();
+      getDetailsTheatres();
+      getListShowTimeMoviesAndInfor();
+    }
   }
-
-  // renderTheatresBranchMove = () => {
-  //   const {listShowtimeTheatres} = this.props;
-  //   if(listShowtimeTheatres ){
-  //     let lstCumRapABC = listShowtimeTheatres.lstCumRap;
-  //   if(lstCumRapABC && lstCumRapABC.length > 0){
-  //     return(
-  //       <TheatresBranchMovie
-  //       listMovie={lstCumRapABC}
-  //     />
-  //     )
-  //   }
-  //   }
-  // }
 
   render() {
     const { listSystemTheatres, listBranchTheatres, systemTheatresForCustom, listShowtimeTheatres } = this.props;
@@ -53,10 +50,11 @@ class Theatres extends Component {
                 />
               </div>
               <div className="theatres__listmovie">
-                <TheatresBranchMovie
+                {/* {listBranchTheatres.lstCumRap && <TheatresBranchMovie
                   listMovie={listShowtimeTheatres.lstCumRap}
-                />
-                {/* {this.renderTheatresBranchMove()} */}
+                />} */}
+
+                {this.renderTheatresBranchMove()}
               </div>
             </div>
           </div>

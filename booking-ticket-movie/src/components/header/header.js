@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../../node_modules/font-awesome/css/font-awesome.min.css';
+// import '../../../node_modules/font-awesome/css/font-awesome.min.css';
 import { Link } from "react-router-dom";
 import * as action from '../../redux/actions';
 import { connect } from "react-redux";

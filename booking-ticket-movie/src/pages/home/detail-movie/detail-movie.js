@@ -61,7 +61,7 @@ class DetailMovie extends Component {
         return (
             <div className="detailMovie">
                 {/* <Loader/> */}
-                <Link className="logo_home" to="/" ><i class="fa fa-home"></i></Link>
+                <Link className="logo_home" to="/" ><i className="fa fa-home"></i></Link>
                 <div className="detailMovie__content">
                     <div className="row detailMovie__header">
                         <div className="col-5 header__banner">
@@ -77,8 +77,8 @@ class DetailMovie extends Component {
                         >
                             <div className="modal__content">
                                 <h1 className="modal__title">Phim: {movie.tenPhim} </h1>
-                                <button className="btn_close_modal" onClick={this.onCloseModal}> <i class="fa fa-times" ></i> </button>
-                                <iframe class="modal__trailer" title="Trailer" src={movie.trailer} />
+                                <button className="btn_close_modal" onClick={this.onCloseModal}> <i className="fa fa-times" ></i> </button>
+                                <iframe className="modal__trailer" title="Trailer" src={movie.trailer} />
                             </div>
                         </Modal>
                         <div className="col-7 header__detail" >
@@ -87,7 +87,7 @@ class DetailMovie extends Component {
                                     <tr className="row row__title">
                                         <td className="col-3 table__title " >Tên phim</td>
                                         <td className="col-9 table__content table__titleMovie"><h3><div className="theatres__title">
-                                        {movie.tenPhim}
+                                            {movie.tenPhim}
                                         </div></h3></td>
                                     </tr>
                                     <tr className="row">
